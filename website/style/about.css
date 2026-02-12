@@ -1,0 +1,105 @@
+:root {
+    --dark-color: #111111;
+    --orange-color: #df9438
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/*-------------------aboutsection3-----------*/
+
+.aboutsection3 {
+    background-color: var(--dark-color);
+}
+
+
+.aboutsection3 .mem1 {
+    height: 70vh;
+}
+
+.aboutsection3 .persion1 {
+    background: url(../../images/about/mem1.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.aboutsection3 .persion2 {
+    background: url(../../images/about/mem2.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+/*-------------------aboutsection4-----------*/
+
+
+.aboutsection4 {
+    background-color: var(--dark-color);
+}
+
+.aboutsection4 .container .row .col {
+    border: 1px gray solid;
+    height: 60vh;
+}
+
+.aboutsection4 iframe {
+    height: 100%;
+}
+
+
+.aboutsection5 .container .col {
+    width: 400px;
+    position: relative;
+
+    height: 70vh;
+}
+
+.aboutsection5 .container .col img {
+    width: 100%;
+    height: 100%;
+}
+
+.aboutsection5 .container .col .name {
+    position: absolute;
+    border: 1px gray solid;
+    height: fit-content;
+    width: 80%;
+    left: 50%;
+    bottom: -10%;
+    transform: translate(-50%);
+    background-color: var(--dark-color);
+
+}
+
+.aboutsection5 .container .col .innercol {
+    background-color: rgba(0, 0, 0, 0.614);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: calc(0);
+    position: absolute;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+    transition: .3s ease;
+
+
+}
+
+.aboutsection5 .container .col:hover .innercol {
+    opacity: calc(1);
+    transform: scale(.9);
+}
+
+
+@media screen and (max-width:600px) {
+
+
+    .aboutsection5 .container .row {
+      gap: 10vh;
+    }
+}

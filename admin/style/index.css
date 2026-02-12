@@ -1,0 +1,61 @@
+:root {
+    --theme-color: #0f1535;
+    --dark-color: #111111;
+    --orange-color: #df9438
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+main .Dashcontainer {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+main .Dashcontainer .two h1 {
+    color: var(--orange-color);
+}
+
+main .Dashcontainer .two {
+    gap: 25px;
+    display: flex;
+}
+
+main .Dashcontainer .two .box {
+    text-align: center;
+    padding: 40px;
+    border: 1px gray solid;
+    border-radius: 10px;
+}
+
+main .Dashcontainer .two .box h1 {
+    font-size: 3rem;
+    color: var(--orange-color);
+}
+
+main .Dashcontainer .two .box h5 {
+    margin-top: 10px;
+    font-size: 1.3rem;
+    color: white;
+}
+
+
+@media screen and (max-width:600px) {
+
+
+    main .Dashcontainer .two {
+        gap: 25px;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+}

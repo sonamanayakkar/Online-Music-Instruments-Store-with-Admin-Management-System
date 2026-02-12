@@ -1,0 +1,533 @@
+:root {
+    --theme-color: #0f1535;
+    --dark-color: #111111;
+    --orange-color: #df9438
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.orange {
+    color: var(--orange-color);
+}
+
+.error{
+    color: red;
+    
+}
+
+section {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 280px auto;
+    /* grid-template-rows: 10% auto 10%; */
+    grid-template-rows: 10% auto;
+
+    /* grid-template-areas: 'aside header ' 'aside main' 'aside footer'; */
+    grid-template-areas: 'aside header ' 'aside main';
+}
+
+
+section header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+header {
+    backdrop-filter: blur(5px);
+    /* background: linear-gradient(rgba(0, 0, 0, 0.784) ,rgba(45, 26, 154, 0.297)); */
+    background-color: black;
+
+}
+
+header .input {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 60%;
+
+}
+
+header .h input {
+    background-color: #21222d;
+    height: 3vh;
+    width: 100%;
+    border-radius: 50px;
+    border: 1px solid gray;
+    padding: 20px;
+}
+
+header .h input:focus {
+    outline: none;
+}
+
+header .profile {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+header .profile .p {
+
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: 1px white solid;
+}
+
+header .profile .p img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+header .profile .nation {
+
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background: url(../images/744.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.fa-list {
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+}
+
+header .fa-magnifying-glass {
+    position: absolute;
+    right: 10px;
+    color: white;
+}
+
+header .profile i {
+    color: white;
+    font-size: 20px;
+}
+
+
+
+/*----------------aside--------------------*/
+
+
+
+section aside {
+    grid-area: aside;
+    display: flex;
+    flex-direction: column;
+    background-color:var(--dark-color);
+    align-items: center;
+    border-right: 1px gray solid;
+
+}
+
+section aside .logo {
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 1rem;
+    color: white;
+    font-weight: 700;
+    height: 10vh;
+    width: 100%;
+}
+
+section aside .logo .fa-xmark {
+
+    font-size: 40px;
+    display: none;
+}
+
+section aside .menulist {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: green solid; */
+
+    width: 100%;
+    height: fit-content;
+}
+
+section aside .menulist ul {
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    height: 83vh;
+    /* border: rgb(255, 1, 1) solid; */
+}
+
+section aside .menulist ul::-webkit-scrollbar {
+    width: 8px;
+}
+
+section aside .menulist ul::-webkit-scrollbar-thumb {
+    background: #00000089;
+    border-radius: 10px;
+}
+
+section aside .menulist ul span {
+    /* display: none; */
+}
+
+section aside .menulist ul li {
+
+    width: fit-content;
+    padding: 10px;
+    width: 100%;
+    list-style: none;
+    transition: .1s ease;
+
+}
+
+section aside .menulist ul li:hover {
+    background-color: #21222d;
+}
+
+
+section aside .menulist ul li a {
+    text-decoration: none;
+    color: #676a86;
+    font-size: 1.2rem;
+}
+
+section aside .menulist ul li a i {
+    margin-right: 10px;
+}
+
+
+section header {
+    grid-area: header;
+}
+
+section main {
+    grid-area: main;
+}
+
+section footer {
+    grid-area: footer;
+}
+
+
+/*--------------main--------------*/
+
+main {
+    background-color: var(--dark-color);
+    position: relative;
+    padding: 0 2vw;
+
+    overflow: auto;
+
+}
+
+main .customize {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    padding: 10px;
+    position: fixed;
+    width: fit-content;
+    display: flex;
+    height: fit-content;
+    gap: 10px;
+    color: white;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    background: linear-gradient(to right, rgb(255, 0, 149), rgb(45, 26, 154));
+
+}
+
+main .hide {
+    width: 100%;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    display: none;
+
+}
+
+
+main .forms {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+main .forms form {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 1px rgb(255, 128, 0);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 40%;
+}
+
+main .forms form .box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+main .forms form .box label {
+    color: var(--orange-color);
+}
+
+main .forms form .box input {
+    height: 6vh;
+    padding-left: 20px;
+    background: transparent;
+    color: white;
+    border: none;
+    outline: 1px gray solid;
+}
+
+main .forms form .box button {
+    height: 5vh;
+}
+
+
+main .table {
+    padding: 40px 20px;
+
+}
+
+main .table table {
+    border-collapse: collapse;
+    border: 1px solid white;
+    width: 100%;
+}
+
+main .table table th {
+    font-weight: 800;
+    padding: 20px;
+    text-align: center;
+    background-color: var(--orange-color);
+}
+
+main .table table td {
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px;
+    text-align: center;
+}
+
+main .table table td .img {
+
+    width: 140px;
+    height: 140px;
+}
+
+main .table table td .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+main .table table tr .actions {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+main .table table tr .actions i {
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+main .table table tr .actions .fa-pen-to-square {
+    color: green;
+}
+
+main .table table tr .actions .fa-trash {
+    color: rgb(255, 0, 0);
+}
+
+/*--------------footer--------------*/
+
+
+footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 20px;
+}
+
+
+
+
+
+@media screen and (max-width:600px) {
+
+    section {
+        width: 100%;
+        height: 100vh;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: 100px auto;
+
+        grid-template-areas: ' header ' ' main';
+    }
+
+    /*-------------header-------------*/
+
+    header {
+        position: relative;
+
+    }
+
+    header .input input {
+        display: none;
+    }
+
+
+
+
+
+
+    header .profile .nation {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        background: url(../images/744.jpg) no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    header .profile .p {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        border: white solid;
+    }
+
+    header .fa-magnifying-glass {
+        position: absolute;
+        right: 32px;
+        color: white;
+    }
+
+
+
+    section aside {
+
+        grid-area: aside;
+        position: absolute;
+
+        left: 0;
+        height: 100vh;
+        width: 50%;
+        transform: translateX(-100%);
+        transition: .3s ease;
+        z-index: 100;
+
+    }
+
+    section .aside1 {
+        grid-area: aside;
+        position: absolute;
+        background-color: #171821;
+        left: 0;
+        height: 100%;
+        width: 60%;
+        transform: translateX(0%);
+
+    }
+
+    section aside .box .logo {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+    }
+
+    section aside .logo .fa-xmark {
+
+
+
+        font-size: 20px;
+        display: block;
+    }
+
+
+
+    /*----------------main------------*/
+
+    main .hide {
+        width: 100%;
+        position: relative;
+
+        display: flex;
+        align-items: center;
+        display: none;
+
+    }
+
+    main .hide .fa-magnifying-glass {
+        color: white;
+        position: absolute;
+        right: 20px;
+
+    }
+
+    main .hide .se-m {
+        width: 100%;
+        padding: 10px 20px;
+        background-color: rgba(0, 0, 0, 0.655);
+        outline: white 1px solid;
+        border-radius: 50px;
+        border: none;
+
+    }
+
+    main .se-m1 {
+        display: flex;
+    }
+
+
+
+    main .forms form {
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px 1px rgb(255, 128, 0);
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+    }
+
+    main .forms {
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+    }
+
+
+    main .table {
+    padding: 40px 20px;
+    overflow: auto;
+}
+
+
+
+}

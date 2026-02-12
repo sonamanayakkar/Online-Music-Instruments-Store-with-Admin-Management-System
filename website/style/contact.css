@@ -1,0 +1,22 @@
+:root {
+    --dark-color: #111111;
+    --orange-color: #df9438
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.contactsection2 .container2 form input{
+    height: 7vh;
+    background-color: transparent;
+    color: white;
+}
+
+.contactsection2 .container2 form textarea{
+    height: 30vh;
+    background-color: transparent;
+}

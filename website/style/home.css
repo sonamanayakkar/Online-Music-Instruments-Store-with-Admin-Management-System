@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --dark-color: #111111;
+    --orange-color: #df9438
+}
+
+* {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.orange {
+    color: var(--orange-color);
+}
+
+.bgorange {
+    background-color: var(--orange-color);
+}
+
+.notify {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+
+    width: 20px;
+    height: 20px;
+}
+
+.section1 {
+    position: relative;
+    background: url(../../images/section1/bearded-man-playing-bass-guitar-with-spotlight-e1648202691415.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.section1 .container1 .one,
+.two {
+    width: 40%;
+}
+
+.section1 .outercontainer {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.585), rgba(0, 0, 0, 0.941));
+}
+
+/*-------------animation--------------*/
+
+.section1 .guitaranimation {
+
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 500px;
+    height: 600px;
+    background: url(../../images/section1/guitar\ animat.png) no-repeat;
+    background-position: center;
+    background-size: contain;
+    transition: 1s linear;
+}
+
+.section1 .guitaranimation:hover {
+
+    transform: translate(-50%, -50%) rotate(20deg);
+}
+
+
+/*-------------section-2---------------*/
+.section2 {
+    background-color: var(--dark-color);
+}
+
+.section2 .container1 {
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+
+.section2 .container1 .pic1 {
+    border-left: 1px solid gray;
+}
+
+.section2 .container1 .pic1,
+.pic2,
+.pic3 {
+    border-right: 1px solid gray;
+}
+
+.section2 .container1 .row img {
+    width: 250px;
+    height: 150px;
+}
+
+.section2 .container3 {
+    background: url(../../images/section1/bearded-man-playing-bass-guitar-with-spotlight-e1648202691415.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/*-------------section-3---------------*/
+.section3 {
+    background-color: var(--dark-color);
+}
+
+
+
+.section3 .img {
+    border: rgb(134, 134, 134) .5px solid;
+    height: 55vh;
+}
+
+.section3 .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.section3 .img .one {
+    background-color: gray;
+}
+
+.section3 .img .two {
+    background-color: var(--orange-color);
+}
+
+.section3 .cartlists .col button {
+    background-color: var(--orange-color);
+}
+
+
+/*-------------section-4---------------*/
+
+.section4 {
+    position: relative;
+}
+
+.section4 .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.section4 .col .box button {
+    background-color: var(--orange-color);
+}
+
+.section4 .gitar {
+    background: url(../../images/section4/black-carbon-fiber-textured-material-design-e1648544450703.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+
+}
+
+.section4 .gitar .clone {
+    background: radial-gradient(rgba(0, 0, 0, 0.608), rgba(30, 30, 30, 0.69));
+}
+
+/*------------animation---------------*/
+
+.section4 .animate {
+    position: absolute;
+    top: 80%;
+    left: 65%;
+
+    transform: rotate(30deg) translate(-50%, -50%);
+    width: 300px;
+    height: 500px;
+    background: url(../../images/section4/animate.png) no-repeat;
+    background-position: center;
+    background-size: contain;
+    transition: 1s linear;
+}
+
+.section4 .animate:hover {
+    transform: rotate(30deg) translate(-50%, -50%) translateY(20px);
+}
+
+
+/*-------------section-5---------------*/
+
+.section5 {
+    background-color: var(--dark-color);
+}
+
+.section5 .container .g1 {
+    background: url(../../images/section5/electric-guitar-sounds-top-view-of-the-electric-guitar-body-against-of-the-wooden-floor-music-e1649228414708-1024x453.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.section5 .container .g2 {
+    background: url(../../images/section5/two.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.section5 .container .g3 {
+    background: url(../../images/section5/three.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+
+/*-------------section-6---------------*/
+
+.section6 {
+    background: url(../../images/section6/bg.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.section6 .container-fluid {
+    background-color: rgba(0, 0, 0, 0.719);
+}
+
+.section6 .carousel {
+
+    height: 60vh;
+}
+
+
+/*------------footer--------------*/
+
+footer {
+    background: url(../../images/footer/bg.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+footer .container-fluid {
+    background-color: rgba(29, 29, 29, 0.851);
+}
+
+footer .container .search {
+    background-color: transparent;
+    border: 1px solid rgb(74, 74, 74);
+    color: white;
+}
+
+footer .container .search:focus {
+    outline: none;
+}
+
+footer .container .btn {
+    border: none;
+}
+
+footer .container1 {
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    background-color: var(--dark-color);
+    margin-bottom: 50vh;
+    border: 1px solid gray;
+}
+
+
+footer .container .container2 {
+    padding: 20vh 0 10vh 0;
+}
+
+footer .final {
+    background-color: var(--orange-color);
+}
+
+footer .lin1{
+    font-size: 1rem;
+}
+
+
+
+@media screen and (max-width:600px) {
+
+
+    .section1 .container1 .one,
+    .two {
+        width: 100%;
+    }
+
+    .section1 .guitaranimation {
+        position: static;
+        transform: none;
+        width: 100%;
+
+    }
+
+
+    /*---------------section 2---------------*/
+
+    .section2 .container1 .row img {
+
+        height: 150px;
+    }
+
+
+    .section2 .container1 .pic1, .pic2, .pic3 {
+    border:none;
+}
+
+
+
+
+    .section4 .animate {
+        position: absolute;
+        top: 90%;
+        left: 20%;
+        transform: translate(-90%, -40%);
+        /* border: red solid; */
+        width: 30%;
+        height: 300px;
+        background: url(../../images/section4/animate.png) no-repeat;
+        background-position: center;
+        background-size: contain;
+        transition: 1s linear;
+    }
+
+
+    footer .container1 {
+
+        position: static;
+        top: -10%;
+        left: 50%;
+        transform:none;
+        background-color: var(--dark-color);
+        margin-bottom: 0px;
+        
+        border: 1px solid gray;
+    }
+
+    footer .container .container2 {
+    padding: 10vh 0 10vh 0;
+}
+
+footer .lin1{
+    font-size: .7rem;
+}
+
+.section1 .guitaranimation:hover {
+    transform:none
+}
+
+
+}

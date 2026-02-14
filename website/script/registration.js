@@ -3,6 +3,7 @@ let email = document.querySelector("#email")
 let password = document.querySelector("#password")
 let confirmpassword = document.querySelector("#confirmpassword")
 
+
 let form = document.querySelector("form")
 
 let error = document.querySelectorAll(".error")
@@ -127,7 +128,7 @@ form.addEventListener('submit', (e) => {
 
 
 
-    debugger
+
 
     if (filled1 && filled2 && filled3) {
 
@@ -160,6 +161,9 @@ form.addEventListener('submit', (e) => {
 
 
         // console.log(getitems());
+        alert("Registration Successfull!")
+
+        window.location.href = "../index.html";
 
 
     }
@@ -177,5 +181,5 @@ function clearall() {
     email.value = ""
     password.value = ""
     confirmpassword.value = ""
-   
+
 }

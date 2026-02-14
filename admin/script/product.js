@@ -1,4 +1,5 @@
-// import { getitems } from "../../utility"
+
+
 
 let url = document.querySelector("#url")
 let productname = document.querySelector("#pname")
@@ -19,10 +20,46 @@ let filled3 = false;
 let filled4 = false;
 let filled5 = false;
 
-// console.log(typeof(orinalprz.value));
+let nodata_found = () => {
+    let row = ""
+    let tbody = document.querySelector("tbody");
+
+    row = `
+                        <tr>
+                            
+                            <td colspan="7" align="center">no product found </td>
+
+                         </tr>
+        
+        `
+
+    tbody.innerHTML = row
+}
 
 
 let productlist = new Array();
+
+let iseditclicked = false;
+
+if (productlist.length < 1) {
+    nodata_found()
+}
+
+let setitems = (settingarray) => {
+    let obj = JSON.stringify(settingarray)
+    localStorage.setItem("products", obj)
+}
+
+let getitems = (db) => {
+
+    let getter = localStorage.getItem(db)
+
+    let conversion = JSON.parse(getter);
+
+    return conversion;
+
+}
+
 
 
 
@@ -127,32 +164,45 @@ form.addEventListener('submit', (e) => {
 
         let [one, two, three] = roundingvalues(orinalprz, discountprz, offer)
 
-        // console.log(one, two, three);
+        debugger
 
-        let details = {
-            id: Date.now(),
-            url: url.value,
-            pname: productname.value,
-            originalprice: one,
-            discountprice: two,
-            offerpercentage: three
+
+        if (iseditclicked) {
+
+            setitems(uploadeditcode())
+
+            console.log(uploadeditcode());
+            clearall()
+
+            upload()
+
+            let localstoragevalues = getitems("products")
+
+            productlist = [];
+
+            localstoragevalues.forEach(element => {
+                productlist.push(element)
+            });
+
+            // console.log(productlist);
+
+            iseditclicked = false
+            submit.innerText = "Submit"
+        } else {
+
+            let details = {
+                id: Date.now(),
+                url: url.value,
+                pname: productname.value,
+                originalprice: one,
+                discountprice: two,
+                offerpercentage: three
+            }
+            clearall()
+            productlist.push(details)
+            setitems(productlist)
+            upload()
         }
-
-        productlist.push(details)
-
-        clearall()
-        // console.log(productlist);
-
-
-        let obj = JSON.stringify(productlist)
-        localStorage.setItem("products", obj)
-
-
-        // console.log(getitems());
-
-        setitems(getitems)
-
-       getitems("products")
 
     }
     else {
@@ -178,44 +228,16 @@ function roundingvalues(op, ds, off) {
 }
 
 
-function clearall() {
-    url.value = ""
-    productname.value = ""
-    orinalprz.value = ""
-    discountprz.value = ""
-    offer.value = ""
-}
-
- let getitems = (db) => {
-
-    let getter = localStorage.getItem(db)
-
-    let conversion = JSON.parse(getter);
-
-    return conversion;
-
-}
-
-
-
-
-let setitems = (callback) => {
-
-    console.log(getitems());
+let upload = () => {
 
     let tbody = document.querySelector("tbody");
+    let row = "";
+    // debugger
+    for (let ele of getitems("products")) {
+        // console.log(ele.pname);
+        row += `
 
-    let tr = document.createElement("tr")
-
-
-    for (let ele of callback("products")) {
-        console.log(ele.pname);
-
-
-
-        tr.innerHTML = `
-
-                    
+                        <tr>
                             <td>1</td>
                             <td>
                                 <div class="img">
@@ -225,25 +247,111 @@ let setitems = (callback) => {
                             <td>$ ${ele.pname}</td>
                             <td>$ ${ele.originalprice}</td>
                             <td>$ ${ele.discountprice}</td>
-                            <td>54% ${ele.offerpercentage}</td>
+                            <td>${ele.offerpercentage} %</td>
                             <td>
                                 <div class="actions">
-                                    <i class="fa-regular fa-pen-to-square"></i>
-                                    <i class="fa-solid fa-trash "></i>
+                                    <i class="fa-regular fa-pen-to-square" onclick="edit(${ele.id})"></i>
+                                    <i class="fa-solid fa-trash" onclick="remove(${ele.id})"></i>
                                 </div>
 
                             </td>
 
-                        
+                         </tr>
     
     `;
-        tbody.appendChild(tr);
+    }
+    // console.log(row);
+    tbody.innerHTML = row
+}
 
+
+function remove(selectedtrash) {
+
+    debugger
+    let conformation = confirm("Do you want to delete selected product ?")
+    let deletelists = getitems("products");
+
+    console.log(deletelists);
+
+    let elementruturn = deletelists.filter((ele) => {
+
+        // this condition returns not matching id objects
+        if (ele.id != selectedtrash) {
+            return ele
+        }
+    })
+
+    if (conformation) {
+        setitems(elementruturn)
+
+        getitems("products")
+
+        if ((getitems("products")).length < 1) {
+            setitems()
+
+            nodata_found()
+        }
+        else {
+            upload()
+            let localstoragevalues = getitems("products")
+
+            productlist = [];
+
+            localstoragevalues.forEach(element => {
+                productlist.push(element)
+            });
+        }
     }
 
 
 
+}
 
+function edit(selecteditId) {
+    debugger
+    iseditclicked = true;
+    console.log("hi");
+
+    let submitbtn = document.querySelector("#submit")
+
+    let idbox = document.querySelector(".idbox")
+
+    let url = document.querySelector("#url")
+    let productname = document.querySelector("#pname")
+    let orinalprz = document.querySelector("#orinalprz")
+    let discountprz = document.querySelector("#discountprz")
+    let offer = document.querySelector("#offer")
+    let product_id = document.querySelector("#ID")
+
+    idbox.style.display = "flex"
+    submitbtn.innerText = "edit"
+
+    let getfromdbs = getitems("products")
+
+    //here clicked edit row filtered and it return one object
+    let matchingid = getfromdbs.filter((ele) => {
+        if (selecteditId == ele.id) {
+            return ele
+        }
+
+    })
+
+    //then matchedid comes as ayyar format like [{}] so i need to unpack that
+    // console.log(matchingid);
+
+    // unpacked array
+    let [selected] = matchingid;
+
+    console.log(selected.id);
+
+    //matching filtered object value to inputs
+
+    product_id.value = selected.id
+    url.value = selected.url
+    productname.value = selected.pname
+    orinalprz.value = selected.originalprice
+    discountprz.value = selected.discountprice
+    offer.value = selected.offerpercentage
 
 
 
@@ -251,7 +359,66 @@ let setitems = (callback) => {
 }
 
 
+function uploadeditcode() {
+    debugger
+    let submit = document.querySelector("#submit")
+    let idbox = document.querySelector(".idbox")
+    let url = document.querySelector("#url")
+    let productname = document.querySelector("#pname")
+    let orinalprz = document.querySelector("#orinalprz")
+    let discountprz = document.querySelector("#discountprz")
+    let offer = document.querySelector("#offer")
+    let product_id = document.querySelector("#ID")
+    debugger
 
+    idbox.style.display = "none"
+    // submit.innerText = "EDIT"
+
+
+    let details = {
+        id: Number(product_id.value),
+        url: url.value,
+        pname: productname.value,
+        originalprice: Number(orinalprz.value),
+        discountprice: Number(discountprz.value),
+        offerpercentage: Number(offer.value)
+    }
+
+    let getfromdbs = getitems("products")
+    // console.log(getfromdbs);
+
+
+    let mapingid = getfromdbs.map((arr) => {
+
+        // console.log(arr);
+
+        if (arr.id == details.id) {
+            return details
+        }
+        else {
+            return arr
+        }
+
+    })
+
+    // debugger
+
+    // console.log(mapingid); // [{},{}]
+
+    return mapingid
+
+
+
+
+}
+
+function clearall() {
+    url.value = ""
+    productname.value = ""
+    orinalprz.value = ""
+    discountprz.value = ""
+    offer.value = ""
+}
 
 
 

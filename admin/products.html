@@ -36,7 +36,7 @@
 
         </header>
 
-       <aside class="box">
+        <aside class="box">
             <div class="logo">
                 <h2>CREAM CRAFT</h2>
 
@@ -57,14 +57,14 @@
                             <span>Customers</span>
                         </a>
                     </li>
-                   
+
                     <li>
                         <a href="products.html">
                             <i class="fa-brands fa-product-hunt"></i>
                             <span>products</span>
                         </a>
                     </li>
-                    
+
                     <li>
                         <a href="message.html"><i class="fa-regular fa-comment"></i>
                             <span>message</span>
@@ -123,28 +123,33 @@
 
             <div class="forms">
                 <form action="" id="form">
+                    <div class="box idbox" style="display: none;">
+                        <label for="">Product ID</label>
+                        <input type="text" id="ID" >
+                        <span class="error"></span>
+                    </div>
                     <div class="box">
-                        <label for="" >Enter image Url</label>
+                        <label for="">Enter image Url</label>
                         <input type="text" id="url">
                         <span class="error"></span>
                     </div>
                     <div class="box">
-                        <label for="" >Product Name With feature</label>
+                        <label for="">Product Name With feature</label>
                         <input type="text " id="pname">
                         <span class="error"></span>
                     </div>
                     <div class="box">
-                        <label for="" >Original Price</label>
+                        <label for="">Original Price</label>
                         <input type="number" id="orinalprz">
                         <span class="error"></span>
                     </div>
                     <div class="box">
-                        <label for="" >Discount Price</label>
+                        <label for="">Discount Price</label>
                         <input type="number" id="discountprz">
                         <span class="error"></span>
                     </div>
                     <div class="box">
-                        <label for="" >Offer precentage</label>
+                        <label for="">Offer precentage</label>
                         <input type="number" id="offer">
                         <span class="error"></span>
                     </div>
@@ -152,8 +157,10 @@
                         <button type="reset">Reset</button>
                     </div>
                     <div class="box">
-                        <button type="submit" id="submit">Submit</button>
+                        <button type="submit" id="submit" >Submit</button>
+                        <!-- <button type="" id="" class="editbtn" style="display: none;" onclick="uploadeditcode()">edit</button> -->
                     </div>
+
                 </form>
             </div>
 
@@ -249,6 +256,8 @@
 
     <script src="script/script.js"></script>
     <script type="" src="script/product.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>
 

@@ -1,6 +1,8 @@
 :root {
-    --theme-color: #0f1535;
-    --dark-color: #111111;
+    --theme-color:#081028;
+    --aside-color:#081028;
+    --box-color:#0b1739;
+    --table-odd:#0a1330;
     --orange-color: #df9438
 }
 
@@ -43,7 +45,7 @@ section header {
 header {
     backdrop-filter: blur(5px);
     /* background: linear-gradient(rgba(0, 0, 0, 0.784) ,rgba(45, 26, 154, 0.297)); */
-    background-color: black;
+    background-color:var(--theme-color);
 
 }
 
@@ -126,7 +128,7 @@ section aside {
     grid-area: aside;
     display: flex;
     flex-direction: column;
-    background-color:var(--dark-color);
+    background-color:var(--aside-color);
     align-items: center;
     border-right: 1px gray solid;
 
@@ -227,7 +229,7 @@ section footer {
 /*--------------main--------------*/
 
 main {
-    background-color: var(--dark-color);
+    background-color:var(--theme-color);
     position: relative;
     padding: 0 2vw;
 
@@ -275,7 +277,8 @@ main .forms {
 main .forms form {
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px 1px rgb(255, 128, 0);
+    /* box-shadow: 0px 0px 10px 1px rgb(255, 128, 0); */
+    background-color: var(--box-color);
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -289,20 +292,37 @@ main .forms form .box {
 }
 
 main .forms form .box label {
-    color: var(--orange-color);
+    color: rgb(169, 169, 169);
 }
 
 main .forms form .box input {
     height: 6vh;
     padding-left: 20px;
-    background: transparent;
+   background-color: var(--theme-color);
     color: white;
     border: none;
-    outline: 1px gray solid;
+    
+    border-radius: 10px;
 }
 
+main .forms form .box input:focus{
+    outline: none;
+    box-shadow: 0px 0px 10px 1px rgb(136, 0, 255);
+}
+main .forms form .buttonbox{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
 main .forms form .box button {
-    height: 5vh;
+    height: 6vh;
+    flex-grow: 1;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    background-color: rgb(119, 0, 255);
+    box-shadow: 0px 0px 10px 1px rgb(0, 0, 0);
 }
 
 
@@ -312,29 +332,39 @@ main .table {
 }
 
 main .table table {
+    overflow: hidden;
     border-collapse: collapse;
-    border: 1px solid white;
+    border-radius: 20px;
     width: 100%;
 }
 
 main .table table th {
-    font-weight: 800;
+    font-weight: 900;
     padding: 20px;
     text-align: center;
-    background-color: var(--orange-color);
+    font-size: 1rem;
+    background-color: var(--box-color);
+    color: rgb(220, 104, 255);
 }
 
 main .table table td {
-    color: white;
+    color: rgb(204, 204, 204);
     font-size: 1.2rem;
     padding: 10px;
     text-align: center;
 }
 
+main .table table tr:nth-child(even){
+    background-color:var(--box-color);
+}
+main .table table tr:nth-child(odd){
+    background-color:var(--table-odd);
+}
+
 main .table table td .img {
 
-    width: 140px;
-    height: 140px;
+    width: 100px;
+    height: 100px;
 }
 
 main .table table td .img img {
@@ -351,16 +381,11 @@ main .table table tr .actions {
 
 main .table table tr .actions i {
     cursor: pointer;
-    font-size: 2rem;
+    font-size: 1.2rem;
+    color: rgb(174, 174, 174);
 }
 
-main .table table tr .actions .fa-pen-to-square {
-    color: green;
-}
 
-main .table table tr .actions .fa-trash {
-    color: rgb(255, 0, 0);
-}
 
 /*--------------footer--------------*/
 

@@ -26,7 +26,7 @@
         <div class="container-fluid outercontainer pb-5">
 
 
-            <header>
+             <header>
                 <nav class="navbar navbar-expand-lg navbar-light  border-bottom  px-5">
                     <div class="container-fluid">
                         <a class="navbar-brand fs-1 text-warning fw-bold" href="#">Rhythmix</a>
@@ -39,8 +39,7 @@
                             id="navbarTogglerDemo02">
                             <ul class="navbar-nav  mb-2 mb-lg-0 d-flex gap-4">
                                 <li class="nav-item">
-                                    <a class="nav-link active text-white fw-bold" aria-current="page"
-                                        href="home.html">Home</a>
+                                    <a class="nav-link active text-white fw-bold" aria-current="page" href="home.html">Home</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link text-white fw-bold" href="about.html">About</a>
@@ -62,14 +61,18 @@
                                 <button class="btn bgorange" type="submit">Search</button>
                             </form>
                             <ul class="navbar-nav  mt-md-0 mt-3  mb-2 mb-lg-0 ">
-                                <li class="nav-item position-relative">
-                                    <a class="nav-link active text-white fs-4" aria-current="page" href="cart.html"><i
-                                            class="fa-brands fa-opencart me-2 fs-4"></i></a>
-                                    <div class="notify">1</div>
+                                <li class="nav-item ">
+                                    <a class="nav-link active text-white fs-4 " aria-current="page" href="cart.html"><i
+                                            class="fa-brands fa-opencart me-2 fs-4 position-relative">
+                                            <div class="notify text-dark fs-6" id="cartcount"></div>
+                                        </i>
+
+                                    </a>
+
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link active text-white fs-4" aria-current="page" href="#"><i
-                                            class="fa-solid fa-right-from-bracket ms-2"></i></a>
+                                    <a class="nav-link active text-white fs-4" aria-current="page"
+                                        href="../index.html"><i class="fa-solid fa-right-from-bracket ms-2"></i></a>
                                 </li>
                             </ul>
                         </div>
@@ -92,18 +95,18 @@
 
         <div class="container1 container-fluid  ">
             <div class="container ">
-                <div class="row  row-cols-1 row-cols-md-3">
+                <div class="row  row-cols-1 row-cols-md-3 d-flex justify-content-center align-items-center">
                     <div
                         class=" col p-4 d-flex flex-md-row flex-column align-items-center justify-content-center gap-4 pic1 ">
                         <img src="../images/section2/first.jpg" alt="">
                         <!-- <img src="../images/section2/first.jpg" alt="" class="mt-md-0 mt-3"> -->
 
                     </div>
-                    <div class=" col p-4 pic2">
+                    <div class=" col p-4 pic2 text-center ">
                         <h2 class="text-white">Our Store</h2>
                         <h5 class="text-white-50 fs-6 fs-md-5">Jalan Sunset Road No. 189 Kuta – Bali</h5>
                     </div>
-                    <div class="col  p-4 pic3">
+                    <div class="col  p-4 pic3 d-flex flex-column align-items-center">
                         <h2 class="text-white">Get In Touch</h2>
                         <h5 class="text-white-50 fs-6 fs-md-5">+62 345 678 890</h5>
                         <h5 class="text-white-50 fs-6 fs-md-5">esonaman2@gmail.com</h5>
@@ -142,17 +145,23 @@
                                     quis, sem. Nulla consequat massa quis enim.</p>
                                 <div class="container d-md-flex gap-4">
 
-                                    <div class="box border d-flex flex-column align-items-center p-4 gap-3">
+                                    <div
+                                        class="box border border-secondary border-1 d-flex flex-column align-items-center justify-content-center p-4 gap-3">
                                         <i class="fa-solid fa-award fs-1 orange"></i>
                                         <h3 class="text-center fs-1 text-white">12<span class="orange">+</span></h3>
-                                        <h5 class="text-white-50">Years experience</h5>
+                                        <h5 class="text-white-50 text-center fs-6 fw-normal">Years experience</h5>
                                     </div>
 
-                                    <div class="box  d-flex flex-column pt-4  p-md-4 gap-3">
-                                        <h5 class="text-white-50">Certified</h5>
-                                        <h5 class="text-white-50">Best Quality</h5>
-                                        <h5 class="text-white-50">Official Guarantee</h5>
-                                        <h5 class="text-white-50">Official Permission</h5>
+                                    <div class="box  d-flex flex-column pt-4  p-md-2 gap-3">
+                                        <h5 class="text-white-50 fs-6"><i
+                                                class="fa-solid fa-hand-point-right orange"></i> Certified</h5>
+                                        <h5 class="text-white-50 fs-6"><i
+                                                class="fa-solid fa-hand-point-right orange"></i> Best Quality</h5>
+                                        <h5 class="text-white-50 fs-6"><i
+                                                class="fa-solid fa-hand-point-right orange"></i> Official Guarantee</h5>
+                                        <h5 class="text-white-50 fs-6"><i
+                                                class="fa-solid fa-hand-point-right orange"></i> Official Permission
+                                        </h5>
                                     </div>
 
                                 </div>
@@ -167,13 +176,13 @@
             </div>
         </div>
 
-        <div class="container3 container btn-warning py-5">
+        <div class="container3 container btn-warning px-0">
 
-            <div class="container">
+            <div class="container   py-3">
 
                 <div class="row row-cols-md-4 row-cols-1 text-center">
-                    <div class="col d-flex align-items-center justify-content-center gap-3 border-md-end p-3">
-                        <div class="font"><i class="fa-solid fa-rocket fs-1 text-center text-warning"></i></div>
+                    <div class="col d-flex align-items-center justify-content-center gap-3  border-md-end p-3 ">
+                        <div class="font"><i class="fa-solid fa-rocket fs-1 text-center orange"></i></div>
                         <div class="content">
                             <h3 class="text-white"> Fast Shipping</h3>
                             <p class="text-white-50">Order Over $1,000.00</p>
@@ -181,7 +190,7 @@
                     </div>
 
                     <div class="col d-flex align-items-center justify-content-center gap-3 border-md-end p-3">
-                        <div class="font"><i class="fa-solid fa-piggy-bank fs-1 text-center text-warning"></i></div>
+                        <div class="font"><i class="fa-solid fa-piggy-bank fs-1 text-center orange"></i></div>
                         <div class="content">
                             <h3 class="text-white"> Fast Shipping</h3>
                             <p class="text-white-50">Order Over $1,000.00</p>
@@ -190,7 +199,7 @@
 
                     <div class="col d-flex align-items-center justify-content-center gap-3 border-md-end p-3">
 
-                        <div class="font"><i class="fa-solid fa-credit-card fs-1 text-center text-warning"></i></div>
+                        <div class="font"><i class="fa-solid fa-credit-card fs-1 text-center orange"></i></div>
                         <div class="content">
                             <h3 class="text-white"> Fast Shipping</h3>
                             <p class="text-white-50">Order Over $1,000.00</p>
@@ -199,7 +208,7 @@
 
                     <div class="col d-flex align-items-center justify-content-center gap-3 p-3">
 
-                        <div class="font"><i class="fa-solid fa-clock fs-1 text-center text-warning"></i></div>
+                        <div class="font"><i class="fa-solid fa-clock fs-1 text-center orange"></i></div>
                         <div class="content">
                             <h3 class="text-white"> Fast Shipping</h3>
                             <p class="text-white-50">Order Over $1,000.00</p>
@@ -366,7 +375,7 @@
     </section>
 
 
-    <footer>
+     <footer>
         <div class="container-fluid pt-5">
             <div class="container">
 
@@ -374,7 +383,7 @@
                     <div class="row align-items-center ">
                         <div class=" col-12 col-md-6">
                             <h1 class="text-white">Subscribe Our <span class="orange">Newsletter</span></h1>
-                            <p class="text-white">Lorem Ipsum is simply dummy text of the printing and typesetting
+                            <p class="text-white-50 fs-6">Lorem Ipsum is simply dummy text of the printing and typesetting
                                 industry.
                             </p>
                         </div>
@@ -383,7 +392,7 @@
                                 <input type="text " placeholder="Your Email"
                                     class=" w-100 w-md-50 search py-3 px-4 mb-3 me-md-1"><br>
                                 <a href=""><button
-                                        class=" btn py-3 px-4 bgorange text-white fw-bold">Subscribe</button></a>
+                                        class=" btn py-3 px-4 bgorange text-dark fw-bold">Subscribe</button></a>
                             </div>
                         </div>
 
@@ -446,11 +455,11 @@
             </div>
 
             <div class="container-fluid final ">
-                <div class="container d-md-flex justify-content-between align-items-center py-3">
+                <div class="container d-md-flex justify-content-between align-items-center py-2">
                     <div class="box  d-flex align-items-center">
                         <span class="lin1">Copyright © Jegtheme 2022. All Right Reserved.</span>
                     </div>
-                    <div class="box d-flex align-items-center  gap-3 mt-md-4">
+                    <div class="box d-flex align-items-center  gap-3 ">
                         <span class="lin1">Supported Payment : </span>
 
                         <i class="fa-brands fa-cc-visa fs-3"></i>
@@ -464,6 +473,8 @@
 
         </div>
     </footer>
+
+    <script src="script/about.js"></script>
 
 </body>
 

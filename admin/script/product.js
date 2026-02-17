@@ -1,12 +1,14 @@
 
 
 
+
 let url = document.querySelector("#url")
 let productname = document.querySelector("#pname")
 let orinalprz = document.querySelector("#orinalprz")
 let discountprz = document.querySelector("#discountprz")
 let offer = document.querySelector("#offer")
 let submit = document.querySelector("#submit")
+let resetbtn = document.querySelector("#resetbtn")
 
 let error = document.querySelectorAll(".error")
 
@@ -188,7 +190,11 @@ form.addEventListener('submit', (e) => {
 
             iseditclicked = false
             submit.innerText = "Submit"
-        } else {
+        }
+
+
+
+        else {
 
             let details = {
                 id: Date.now(),
@@ -214,6 +220,7 @@ form.addEventListener('submit', (e) => {
 
 
 
+
 function roundingvalues(op, ds, off) {
 
     let finalop = Math.trunc(Number(op.value))
@@ -232,13 +239,15 @@ let upload = () => {
 
     let tbody = document.querySelector("tbody");
     let row = "";
+    let count = 0;
     // debugger
     for (let ele of getitems("products")) {
         // console.log(ele.pname);
+        count++
         row += `
 
                         <tr>
-                            <td>1</td>
+                            <td>${count}</td>
                             <td>
                                 <div class="img">
                                     <img src="${ele.url}" alt="" loading="lazy">
@@ -288,7 +297,7 @@ function remove(selectedtrash) {
 
         if ((getitems("products")).length < 1) {
             setitems()
-
+            productlist = [];
             nodata_found()
         }
         else {
@@ -301,6 +310,9 @@ function remove(selectedtrash) {
                 productlist.push(element)
             });
         }
+
+        console.log(productlist);
+
     }
 
 
@@ -419,6 +431,24 @@ function clearall() {
     discountprz.value = ""
     offer.value = ""
 }
+
+
+
+
+document.addEventListener('DOMContentLoaded', (e) => {
+    upload()
+    // console.log(productlist);
+
+    let datafromlocalstorage = getitems("products")
+    // console.log(datafromlocalstorage);
+
+    datafromlocalstorage.forEach(element => {
+        productlist.push(element)
+    });
+    console.log("this is default array");
+
+    console.log(productlist);
+})
 
 
 

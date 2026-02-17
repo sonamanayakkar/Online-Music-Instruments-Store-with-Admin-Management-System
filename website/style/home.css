@@ -81,18 +81,18 @@
 }
 
 .section2 .container1 {
-    border-top: 1px solid gray;
-    border-bottom: 1px solid gray;
+    border-top: 1px solid rgba(128, 128, 128, 0.237);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.237);
 }
 
 .section2 .container1 .pic1 {
-    border-left: 1px solid gray;
+    border-left: 1px solid rgba(128, 128, 128, 0.237);
 }
 
 .section2 .container1 .pic1,
 .pic2,
 .pic3 {
-    border-right: 1px solid gray;
+    border-right: 1px solid rgba(128, 128, 128, 0.237);
 }
 
 .section2 .container1 .row img {
@@ -101,10 +101,14 @@
 }
 
 .section2 .container3 {
-    background: url(../../images/section1/bearded-man-playing-bass-guitar-with-spotlight-e1648202691415.jpg) no-repeat;
+    background: url(../../images/section2/bitcoinimg.jpg) no-repeat;
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
+}
+
+.section2 .container3 .container{
+    background-color: rgba(52, 52, 52, 0.458);
 }
 
 /*-------------section-3---------------*/
@@ -115,7 +119,7 @@
 
 
 .section3 .img {
-    border: rgb(134, 134, 134) .5px solid;
+    border: rgb(87, 87, 87) .5px solid;
     height: 55vh;
 }
 
@@ -240,7 +244,7 @@ footer {
 }
 
 footer .container-fluid {
-    background-color: rgba(29, 29, 29, 0.851);
+    background-color: rgba(19, 19, 19, 0.674);
 }
 
 footer .container .search {

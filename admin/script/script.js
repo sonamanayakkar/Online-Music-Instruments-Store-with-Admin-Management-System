@@ -7,7 +7,27 @@ const crossmark = document.querySelector('.fa-xmark');
 const search = document.querySelector('.fa-magnifying-glass');
 const profile = document.querySelector('.profile');
 const input = document.querySelector('.hide');
+let logout = document.querySelector('#logout');
 
+
+
+
+logout.addEventListener('click',(e)=>{
+      e.preventDefault()
+      
+      let conformation = confirm("Do you want to logout ?")
+
+      if (conformation) {
+
+         setTimeout(() => {
+             window.location.href="../index.html"
+         }, 1000);
+        
+      }
+
+
+      
+})
 
 
 menu.addEventListener('click',()=>{

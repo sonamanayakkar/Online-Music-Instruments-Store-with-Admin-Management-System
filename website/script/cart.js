@@ -30,79 +30,6 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
     cartcount()
 
-    // plus.forEach(increebtn => {
-
-    //     increebtn.addEventListener('click', (e) => {
-
-
-
-
-
-
-    //         console.log("increebtn");
-
-    //         let parent = e.currentTarget.closest(".parent")
-
-    //         let qty = parent.querySelector(".qtyvalue");
-    //         let price = parent.querySelector(".price");
-
-    //         debugger
-    //         let innervalue = Number(qty.innerText);
-
-    //         const defaultvalue_price = parseFloat(price.dataset.baseprice);
-
-    //         innervalue++;
-    //         function eachprice(qty) {
-    //             return qty * defaultvalue_price;
-    //         }
-
-    //         price.innerText = (eachprice(innervalue))
-
-
-    //         qty.innerText = innervalue
-
-
-
-
-
-
-
-    //     })
-    // });
-
-    // minus.forEach(decreebtn => {
-
-    //     decreebtn.addEventListener('click', (e) => {
-    //         // console.log("increebtn");
-    //         debugger
-
-    //         let parent = e.currentTarget.closest(".parent")
-
-    //         let qty = parent.querySelector(".qtyvalue");
-    //         let price = parent.querySelector(".price");
-    //         const defaultvalue_price = parseFloat(price.dataset.baseprice);
-
-    //         let innervalue = Number(qty.innerText);
-
-
-    //         if (innervalue > 1) {
-    //             innervalue--;
-
-    //             qty.innerText = innervalue
-
-    //             function eachprice(qty) {
-    //                 debugger
-    //                 return defaultvalue_price * qty;
-    //             }
-
-
-    //             price.innerText = (eachprice(innervalue))
-
-    //         }
-
-
-    //     })
-    // });
 
 })
 
@@ -283,12 +210,12 @@ let buyingprocess = () => {
 
         if (orderconformation) {
             console.log(datafrom_db);
-          setitems([], "cart_items")
+            setitems([], "cart_items")
             upload()
             total()
 
-             cartcount()
-             alert("✅ Thank you for your purchase!")
+            cartcount()
+            alert("✅ Thank you for your purchase!")
 
 
         }
@@ -308,6 +235,7 @@ let upload = () => {
     let getdatafrom_db = getitems("cart_items") || []
 
     let container = document.querySelector("#cartcontainer")
+    let buybutton=  document.querySelector(".buycontainer")
     let row = "";
 
 
@@ -325,7 +253,7 @@ let upload = () => {
                             </div>
                         </div>
                         <div class="qty">
-                            <div class="two d-flex align-items-center gap-4 ">
+                            <div class="two d-flex align-items-center gap-md-4 gap-2 ">
                                 <div class="three text-white minus" onclick="decreement(${element.unique_id})">-</div>
                                 <div class="three1 fs-1 orange qtyvalue">${element.quantity}</div>
                                 <div class="three text-white plus" onclick="increment(${element.unique_id})">+</div>
@@ -344,8 +272,10 @@ let upload = () => {
 
     if ((getdatafrom_db).length < 1) {
         container.innerHTML = nodatafound();
+        buybutton.style.display="none"
     } else {
         container.innerHTML = row;
+        buybutton.style.display="flex"
     }
 
 
@@ -388,8 +318,8 @@ let deleteitem = (productid) => {
 
 
     }
-       total()
-       cartcount()
+    total()
+    cartcount()
 
 }
 
@@ -421,14 +351,39 @@ let calculations = () => {
 }
 
 
-let cartcount=()=>{
+let cartcount = () => {
     let totalcarts = document.getElementById("cartcount")
 
     let valuefromdb = getitems("cart_items")
     console.log("this is");
-    
+
     // console.log(valuefromdb.length);
 
-    totalcarts.innerText=(valuefromdb.length)
-    
+    totalcarts.innerText = (valuefromdb.length)
+
 }
+
+
+
+
+
+
+
+document.addEventListener('scroll', (e) => {
+    let header = document.querySelector("header")
+    console.log(window.scrollY);
+
+    let scroll = window.scrollY
+
+
+    if (scroll > 250) {
+          
+
+        header.classList.add("top")
+    }
+
+    else{
+          header.classList.remove("top")
+    }
+
+})

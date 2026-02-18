@@ -1,8 +1,8 @@
 :root {
-    --theme-color:#081028;
-    --aside-color:#081028;
-    --box-color:#0b1739;
-    --table-odd:#0a1330;
+    --theme-color: #081028;
+    --aside-color: #081028;
+    --box-color: #0b1739;
+    --table-odd: #0a1330;
     --orange-color: #df9438
 }
 
@@ -17,9 +17,9 @@
     color: var(--orange-color);
 }
 
-.error{
+.error {
     color: red;
-    
+
 }
 
 section {
@@ -45,7 +45,7 @@ section header {
 header {
     backdrop-filter: blur(5px);
     /* background: linear-gradient(rgba(0, 0, 0, 0.784) ,rgba(45, 26, 154, 0.297)); */
-    background-color:var(--theme-color);
+    background-color: rgb(255, 255, 255);
 
 }
 
@@ -59,11 +59,11 @@ header .input {
 }
 
 header .h input {
-    background-color: #21222d;
-    height: 3vh;
+    background-color: #ECF0FA;
+    height: 2vh;
     width: 100%;
     border-radius: 50px;
-    border: 1px solid gray;
+    border: none;
     padding: 20px;
 }
 
@@ -78,11 +78,11 @@ header .profile {
 }
 
 header .profile .p {
-
+    overflow: hidden;
     height: 40px;
     width: 40px;
     border-radius: 50%;
-    border: 1px white solid;
+    border: 1px rgb(0, 0, 0) solid;
 }
 
 header .profile .p img {
@@ -104,18 +104,22 @@ header .profile .nation {
 .fa-list {
     font-size: 20px;
     cursor: pointer;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 header .fa-magnifying-glass {
     position: absolute;
     right: 10px;
-    color: white;
+    color: #3667e4;
 }
 
 header .profile i {
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 20px;
+}
+
+header .profile .fa-bell {
+    color: rgb(255, 159, 3);
 }
 
 
@@ -128,9 +132,9 @@ section aside {
     grid-area: aside;
     display: flex;
     flex-direction: column;
-    background-color:var(--aside-color);
+    background: linear-gradient(to bottom, rgb(255, 255, 255), rgb(43, 43, 43));
     align-items: center;
-    border-right: 1px gray solid;
+
 
 }
 
@@ -140,8 +144,8 @@ section aside .logo {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    font-size: 1rem;
-    color: white;
+    font-size: 1.5rem;
+    color: var(--orange-color);
     font-weight: 700;
     height: 10vh;
     width: 100%;
@@ -204,8 +208,12 @@ section aside .menulist ul li:hover {
 
 section aside .menulist ul li a {
     text-decoration: none;
-    color: #676a86;
+    color: #000000;
     font-size: 1.2rem;
+}
+
+section aside .menulist ul li:hover a {
+    color: white;
 }
 
 section aside .menulist ul li a i {
@@ -229,7 +237,10 @@ section footer {
 /*--------------main--------------*/
 
 main {
-    background-color:var(--theme-color);
+   
+    
+    background-color: #ECF0FA;
+   
     position: relative;
     padding: 0 2vw;
 
@@ -266,6 +277,7 @@ main .hide {
 
 
 main .forms {
+
     margin-top: 30px;
     display: flex;
     align-items: center;
@@ -277,9 +289,11 @@ main .forms {
 main .forms form {
     padding: 20px;
     border-radius: 10px;
-    /* box-shadow: 0px 0px 10px 1px rgb(255, 128, 0); */
-    background-color: var(--box-color);
+    box-shadow: 0px 0px 10px 1px rgb(101, 101, 101);
+    /* background-color: var(--box-color); */
     display: flex;
+    background-color: rgba(255, 255, 255, 0.981);
+    backdrop-filter: blur(5px);
     flex-direction: column;
     gap: 20px;
     width: 40%;
@@ -292,28 +306,30 @@ main .forms form .box {
 }
 
 main .forms form .box label {
-    color: rgb(169, 169, 169);
+    color: rgb(0, 0, 0);
 }
 
 main .forms form .box input {
     height: 6vh;
     padding-left: 20px;
-   background-color: var(--theme-color);
-    color: white;
+    background-color: rgba(0, 0, 0, 0.285);
+    color: rgb(0, 0, 0);
     border: none;
-    
+
     border-radius: 10px;
 }
 
-main .forms form .box input:focus{
+main .forms form .box input:focus {
     outline: none;
-    box-shadow: 0px 0px 10px 1px rgb(136, 0, 255);
+    box-shadow: 0px 0px 10px 5px rgb(0, 0, 0);
 }
-main .forms form .buttonbox{
+
+main .forms form .buttonbox {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
 }
+
 main .forms form .box button {
     height: 6vh;
     flex-grow: 1;
@@ -321,7 +337,7 @@ main .forms form .box button {
     border-radius: 5px;
     border: none;
     color: white;
-    background-color: rgb(119, 0, 255);
+    background-color: rgb(0, 0, 0);
     box-shadow: 0px 0px 10px 1px rgb(0, 0, 0);
 }
 
@@ -335,30 +351,35 @@ main .table table {
     overflow: hidden;
     border-collapse: collapse;
     border-radius: 20px;
+    backdrop-filter: blur(5px);
     width: 100%;
 }
 
 main .table table th {
-    font-weight: 900;
+    font-weight: 700;
     padding: 20px;
     text-align: center;
-    font-size: 1rem;
-    background-color: var(--box-color);
-    color: rgb(220, 104, 255);
+    text-transform: uppercase;
+    font-size: .8rem;
+    background-color: rgba(0, 0, 0, 0.825);
+    color: rgb(255, 221, 53);
 }
 
 main .table table td {
-    color: rgb(204, 204, 204);
+    color: rgb(0, 0, 0);
     font-size: 1.2rem;
     padding: 10px;
     text-align: center;
 }
 
-main .table table tr:nth-child(even){
-    background-color:var(--box-color);
+main .table table tr:nth-child(even) {
+
+    background-color: rgba(0, 0, 0, 0.579);
 }
-main .table table tr:nth-child(odd){
-    background-color:var(--table-odd);
+
+main .table table tr:nth-child(odd) {
+
+    background-color: rgba(63, 63, 63, 0.395);
 }
 
 main .table table td .img {
@@ -382,7 +403,7 @@ main .table table tr .actions {
 main .table table tr .actions i {
     cursor: pointer;
     font-size: 1.2rem;
-    color: rgb(174, 174, 174);
+    color: rgb(10, 10, 10);
 }
 
 
@@ -400,7 +421,7 @@ footer {
 
 
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:800px) {
 
     section {
         width: 100%;
@@ -549,9 +570,9 @@ footer {
 
 
     main .table {
-    padding: 40px 20px;
-    overflow: auto;
-}
+        padding: 40px 20px;
+        overflow: auto;
+    }
 
 
 

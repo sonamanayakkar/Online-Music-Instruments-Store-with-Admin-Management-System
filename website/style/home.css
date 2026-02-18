@@ -23,9 +23,11 @@
 
 .notify {
     position: absolute;
-    top: -10px;
+    top: -20px;
     right: -10px;
+    color: rgb(0, 0, 0);
     background-color: white;
+    font-weight: 800;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -36,10 +38,26 @@
 }
 
 .section1 {
-    position: relative;
+
     background: url(../../images/section1/bearded-man-playing-bass-guitar-with-spotlight-e1648202691415.jpg) no-repeat;
     background-position: center;
     background-size: cover;
+}
+
+.section1 header {
+    
+    border-bottom: 1px solid gray;
+
+}
+.section1  .top{
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-bottom: 1px solid gray;
+
 }
 
 .section1 .container1 .one,
@@ -54,14 +72,12 @@
 /*-------------animation--------------*/
 
 .section1 .guitaranimation {
-
-
-    position: absolute;
+    /* position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */
 
-    width: 500px;
+    width: 200px;
     height: 600px;
     background: url(../../images/section1/guitar\ animat.png) no-repeat;
     background-position: center;
@@ -69,10 +85,14 @@
     transition: 1s linear;
 }
 
-.section1 .guitaranimation:hover {
+.section1 .heading {
+    font-size: 2.5rem;
+}
+
+/* .section1 .guitaranimation:hover {
 
     transform: translate(-50%, -50%) rotate(20deg);
-}
+} */
 
 
 /*-------------section-2---------------*/
@@ -96,7 +116,7 @@
 }
 
 .section2 .container1 .row img {
-    width: 250px;
+    width: 50%;
     height: 150px;
 }
 
@@ -107,8 +127,9 @@
     background-attachment: fixed;
 }
 
-.section2 .container3 .container{
-    background-color: rgba(52, 52, 52, 0.458);
+.section2 .container3 .container {
+    background: linear-gradient(to bottom, black, rgba(128, 128, 128, 0.158));
+    /* background-color: rgba(0, 0, 0, 0.568); */
 }
 
 /*-------------section-3---------------*/
@@ -119,26 +140,74 @@
 
 
 .section3 .img {
-    border: rgb(87, 87, 87) .5px solid;
-    height: 55vh;
+    overflow: hidden;
 }
 
 .section3 .img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    transition: .3s ease;
+
 }
 
-.section3 .img .one {
-    background-color: gray;
+.section3 .img:hover img {
+    transform: scale(1.2) rotate(5deg);
+
 }
 
-.section3 .img .two {
-    background-color: var(--orange-color);
+.section3 .category .card .card-body {
+    background-color: transparent;
 }
+
+
+
+
+.section3 .sales .one {
+    cursor: pointer;
+    border-radius: 50%;
+    color: green;
+    background-color: rgb(255, 255, 255);
+}
+
+.section3 .sales .heart {
+    cursor: pointer;
+    color: red;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+}
+
+.section3 .sales .three {
+
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+}
+
+
 
 .section3 .cartlists .col button {
     background-color: var(--orange-color);
+    font-size: .8rem;
+}
+
+.section3 .cart {
+    overflow: hidden;
+    transition: .3s ease;
+    border: 1px gray solid;
+    border-radius: 15px;
+}
+
+.section3 .sales {
+    position: absolute;
+    top: 0;
+    right: -80px;
+    transition: .3s ease;
+
+}
+
+.section3 .cart:hover {
+    box-shadow: 0px 0px 5px 1px white;
+}
+
+.section3 .cart:hover .sales {
+    right: 0;
 }
 
 
@@ -173,20 +242,21 @@
 
 .section4 .animate {
     position: absolute;
-    top: 80%;
-    left: 65%;
+    bottom: -20%;
+    left: 10%;
 
-    transform: rotate(30deg) translate(-50%, -50%);
-    width: 300px;
-    height: 500px;
+    transform: rotate(30deg);
+    width: 40%;
+    height: 50%;
     background: url(../../images/section4/animate.png) no-repeat;
     background-position: center;
     background-size: contain;
-    transition: 1s linear;
+    transition: .4s ease;
+
 }
 
 .section4 .animate:hover {
-    transform: rotate(30deg) translate(-50%, -50%) translateY(20px);
+    transform: rotate(30deg) translateY(-20px);
 }
 
 
@@ -233,6 +303,10 @@
     height: 60vh;
 }
 
+.section6 .carousel .box {
+    background-color: var(--dark-color);
+}
+
 
 /*------------footer--------------*/
 
@@ -244,7 +318,7 @@ footer {
 }
 
 footer .container-fluid {
-    background-color: rgba(19, 19, 19, 0.674);
+    background-color: rgba(19, 19, 19, 0.778);
 }
 
 footer .container .search {
@@ -280,13 +354,13 @@ footer .final {
     background-color: var(--orange-color);
 }
 
-footer .lin1{
+footer .lin1 {
     font-size: 1rem;
 }
 
 
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:800px) {
 
 
     .section1 .container1 .one,
@@ -297,39 +371,81 @@ footer .lin1{
     .section1 .guitaranimation {
         position: static;
         transform: none;
-        width: 100%;
+        width: 80%;
 
+    }
+
+    .section1 .heading {
+        font-size: 1.6rem;
+    }
+
+    .section1 p {
+        font-size: .7rem;
+        font-weight: 300;
     }
 
 
     /*---------------section 2---------------*/
 
     .section2 .container1 .row img {
-
-        height: 150px;
+        width: 100%;
+        height: 200px;
     }
 
 
-    .section2 .container1 .pic1, .pic2, .pic3 {
-    border:none;
-}
+    .section2 .container1 .pic1,
+    .pic2,
+    .pic3 {
+        border: none;
+    }
+
+    .section2 .container1 h5 {
+        font-size: .8rem;
+        font-weight: 300;
+    }
+
+    .section2 .container2 p {
+        font-size: .8rem;
+    }
+
+    .section2 .container3 p {
+        font-size: .8rem;
+    }
 
 
-
+    /*---------------section 4---------------*/
 
     .section4 .animate {
         position: absolute;
-        top: 90%;
-        left: 20%;
-        transform: translate(-90%, -40%);
-        /* border: red solid; */
-        width: 30%;
-        height: 300px;
+        bottom: -30%;
+        left: 10%;
+
+        transform: rotate(30deg);
+        width: 40%;
+        height: 50%;
         background: url(../../images/section4/animate.png) no-repeat;
         background-position: center;
         background-size: contain;
-        transition: 1s linear;
+        transition: .4s ease;
+
     }
+
+    .section4 .clone p {
+        font-weight: 300;
+        font-size: .8rem;
+    }
+
+
+
+    .section6 p {
+        font-size: .8rem;
+    }
+
+    .section6 .carousel .carousel-item .box {
+
+        padding: 30px;
+    }
+
 
 
     footer .container1 {
@@ -337,24 +453,29 @@ footer .lin1{
         position: static;
         top: -10%;
         left: 50%;
-        transform:none;
+        transform: none;
         background-color: var(--dark-color);
         margin-bottom: 0px;
-        
+
         border: 1px solid gray;
     }
 
     footer .container .container2 {
-    padding: 10vh 0 10vh 0;
-}
+        padding: 10vh 0 10vh 0;
+    }
 
-footer .lin1{
-    font-size: .7rem;
-}
+    footer .lin1 {
+        font-size: .7rem;
+    }
 
-.section1 .guitaranimation:hover {
-    transform:none
-}
+    footer p {
+        font-weight: 300;
+        font-size: .8rem;
+    }
+
+    .section1 .guitaranimation:hover {
+        transform: none
+    }
 
 
 }

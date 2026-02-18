@@ -37,3 +37,27 @@ let cartcount = () => {
     totalcarts.innerText = (valuefromdb.length)
 
 }
+
+
+
+
+
+
+document.addEventListener('scroll', (e) => {
+    let header = document.querySelector("header")
+    console.log(window.scrollY);
+
+    let scroll = window.scrollY
+
+
+    if (scroll > 250) {
+          
+
+        header.classList.add("top")
+    }
+
+    else{
+          header.classList.remove("top")
+    }
+
+})

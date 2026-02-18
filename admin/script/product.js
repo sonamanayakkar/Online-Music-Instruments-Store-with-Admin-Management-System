@@ -29,7 +29,7 @@ let nodata_found = () => {
     row = `
                         <tr>
                             
-                            <td colspan="7" align="center">no product found </td>
+                            <td colspan="7" align="center" style="height:10vh">Empty List <i class="fa-solid fa-file-circle-xmark" style="color:red"></i></td>
 
                          </tr>
         
@@ -96,7 +96,7 @@ form.addEventListener('submit', (e) => {
     }
     // product name verification
 
-    if ((productname.value) != "") {
+    if ((productname.value) != "" && (productname.value).length>3) {
         filled2 = true
         productname.style.border = ""
         error[1].innerText = ""
@@ -114,6 +114,8 @@ form.addEventListener('submit', (e) => {
     //original prize verification
 
     if ((orinalprz.value) != "") {
+
+        
         filled3 = true
 
         let roundop = Math.trunc(orinalprz.value);
@@ -253,9 +255,9 @@ let upload = () => {
                                     <img src="${ele.url}" alt="" loading="lazy">
                                 </div>
                             </td>
-                            <td>$ ${ele.pname}</td>
-                            <td>$ ${ele.originalprice}</td>
-                            <td>$ ${ele.discountprice}</td>
+                            <td> ${ele.pname}</td>
+                            <td>₹ ${ele.originalprice}</td>
+                            <td>₹ ${ele.discountprice}</td>
                             <td>${ele.offerpercentage} %</td>
                             <td>
                                 <div class="actions">

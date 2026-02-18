@@ -104,6 +104,7 @@ function userdetailchecker() {
         reglocation.classList.add("gloweffect")
         
         alert("Username not found so please registration first")
+        window.location.href="website/registration.html"
     }
 
 }

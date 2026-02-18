@@ -13,7 +13,7 @@
 
 
 main .Dashcontainer {
-    padding: 20px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -21,7 +21,8 @@ main .Dashcontainer {
 }
 
 main .Dashcontainer .two h1 {
-    color: var(--orange-color);
+    text-transform: uppercase;
+    color:black;
 }
 
 main .Dashcontainer .two {
@@ -30,21 +31,44 @@ main .Dashcontainer .two {
 }
 
 main .Dashcontainer .two .box {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
     padding: 40px;
-    border: 1px gray solid;
-    border-radius: 10px;
+   
+    border-radius: 5px;
+}
+
+main .Dashcontainer .two .box .details{
+    text-align: center;
+}
+
+main .Dashcontainer .two .box i{
+    font-size: 3rem;
 }
 
 main .Dashcontainer .two .box h1 {
     font-size: 3rem;
-    color: var(--orange-color);
+    color: blue;
 }
 
 main .Dashcontainer .two .box h5 {
     margin-top: 10px;
     font-size: 1.3rem;
     color: white;
+}
+
+main .Dashcontainer .two .one{
+    background:linear-gradient(to right ,#0665E9 ,#82b6ff) ;
+}
+main .Dashcontainer .two .two{
+    background:linear-gradient(to right ,#F94765,#ff9bab) ;
+}
+main .Dashcontainer .two .three{
+    background:linear-gradient(to right ,#039767,#7aeec9) ;
 }
 
 

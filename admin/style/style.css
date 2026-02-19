@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap');
+
+
+
 :root {
     --theme-color: #081028;
     --aside-color: #081028;
@@ -10,6 +14,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+     font-family: "Zain", sans-serif;
 }
 
 
@@ -45,7 +50,7 @@ section header {
 header {
     backdrop-filter: blur(5px);
     /* background: linear-gradient(rgba(0, 0, 0, 0.784) ,rgba(45, 26, 154, 0.297)); */
-    background-color: rgb(255, 255, 255);
+    background-color: #0a1128;
 
 }
 
@@ -59,12 +64,13 @@ header .input {
 }
 
 header .h input {
-    background-color: #ECF0FA;
+    background-color: #0e1d44;
     height: 2vh;
     width: 100%;
     border-radius: 50px;
     border: none;
     padding: 20px;
+    color: white;
 }
 
 header .h input:focus {
@@ -82,7 +88,7 @@ header .profile .p {
     height: 40px;
     width: 40px;
     border-radius: 50%;
-    border: 1px rgb(0, 0, 0) solid;
+    
 }
 
 header .profile .p img {
@@ -104,7 +110,7 @@ header .profile .nation {
 .fa-list {
     font-size: 20px;
     cursor: pointer;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
 }
 
 header .fa-magnifying-glass {
@@ -114,7 +120,7 @@ header .fa-magnifying-glass {
 }
 
 header .profile i {
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     font-size: 20px;
 }
 
@@ -132,7 +138,7 @@ section aside {
     grid-area: aside;
     display: flex;
     flex-direction: column;
-    background: linear-gradient(to bottom, rgb(255, 255, 255), rgb(43, 43, 43));
+    background-color: #0a1128;
     align-items: center;
 
 
@@ -145,7 +151,8 @@ section aside .logo {
     align-items: center;
     justify-content: space-around;
     font-size: 1.5rem;
-    color: var(--orange-color);
+    border-bottom: 2px solid rgb(15, 34, 80);
+    color:rgb(184, 197, 253);
     font-weight: 700;
     height: 10vh;
     width: 100%;
@@ -202,13 +209,13 @@ section aside .menulist ul li {
 }
 
 section aside .menulist ul li:hover {
-    background-color: #21222d;
+     background-color: #152a4f;
 }
 
 
 section aside .menulist ul li a {
     text-decoration: none;
-    color: #000000;
+    color: #ffffff;
     font-size: 1.2rem;
 }
 
@@ -239,7 +246,7 @@ section footer {
 main {
    
     
-    background-color: #ECF0FA;
+    background-color: #000814;
    
     position: relative;
     padding: 0 2vw;
@@ -292,7 +299,8 @@ main .forms form {
     box-shadow: 0px 0px 10px 1px rgb(101, 101, 101);
     /* background-color: var(--box-color); */
     display: flex;
-    background-color: rgba(255, 255, 255, 0.981);
+     background-color: #01112f;
+    
     backdrop-filter: blur(5px);
     flex-direction: column;
     gap: 20px;
@@ -306,14 +314,14 @@ main .forms form .box {
 }
 
 main .forms form .box label {
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
 }
 
 main .forms form .box input {
     height: 6vh;
     padding-left: 20px;
-    background-color: rgba(0, 0, 0, 0.285);
-    color: rgb(0, 0, 0);
+    background-color: rgb(11, 25, 66);
+    color: rgb(255, 255, 255);
     border: none;
 
     border-radius: 10px;
@@ -336,9 +344,9 @@ main .forms form .box button {
     cursor: pointer;
     border-radius: 5px;
     border: none;
-    color: white;
-    background-color: rgb(0, 0, 0);
-    box-shadow: 0px 0px 10px 1px rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    /* box-shadow: 0px 0px 10px 1px rgb(0, 0, 0); */
 }
 
 
@@ -362,24 +370,25 @@ main .table table th {
     text-transform: uppercase;
     font-size: .8rem;
     background-color: rgba(0, 0, 0, 0.825);
-    color: rgb(255, 221, 53);
+    color: rgb(255, 255, 255);
 }
 
 main .table table td {
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     font-size: 1.2rem;
-    padding: 10px;
+    padding: 20px;
     text-align: center;
 }
 
 main .table table tr:nth-child(even) {
-
-    background-color: rgba(0, 0, 0, 0.579);
+    border-bottom: 2px solid rgb(20, 28, 94);
+    background-color: #01112f;
+    
 }
 
 main .table table tr:nth-child(odd) {
-
-    background-color: rgba(63, 63, 63, 0.395);
+    border-bottom: 2px solid rgb(20, 28, 94);
+    background-color: #010a1a;
 }
 
 main .table table td .img {
@@ -403,7 +412,7 @@ main .table table tr .actions {
 main .table table tr .actions i {
     cursor: pointer;
     font-size: 1.2rem;
-    color: rgb(10, 10, 10);
+    color: rgb(143, 143, 143);
 }
 
 

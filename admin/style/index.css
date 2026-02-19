@@ -21,8 +21,9 @@ main .Dashcontainer {
 }
 
 main .Dashcontainer .two h1 {
-    text-transform: uppercase;
-    color:black;
+    text-transform: capitalize;
+    color: #67b0fe;
+    font-size: 2.4rem;
 }
 
 main .Dashcontainer .two {
@@ -38,21 +39,26 @@ main .Dashcontainer .two .box {
     align-items: center;
     width: 500px;
     padding: 40px;
-   
+
     border-radius: 5px;
 }
 
-main .Dashcontainer .two .box .details{
+main .Dashcontainer .two .box .details {
     text-align: center;
 }
 
-main .Dashcontainer .two .box i{
+main .Dashcontainer .two .box i {
     font-size: 3rem;
+    color: #1c44f3;
 }
 
 main .Dashcontainer .two .box h1 {
     font-size: 3rem;
-    color: blue;
+    color: rgb(255, 255, 255);
+}
+
+main .Dashcontainer .two .box h2 {
+    color: rgba(255, 255, 255, 0.792);
 }
 
 main .Dashcontainer .two .box h5 {
@@ -61,14 +67,20 @@ main .Dashcontainer .two .box h5 {
     color: white;
 }
 
-main .Dashcontainer .two .one{
-    background:linear-gradient(to right ,#0665E9 ,#82b6ff) ;
+main .Dashcontainer .two .one {
+    /* background:linear-gradient(to right ,#0665E9 ,#82b6ff) ; */
+    background-color: #01112f;
+    border: 2px solid rgb(19, 37, 80);
 }
-main .Dashcontainer .two .two{
-    background:linear-gradient(to right ,#F94765,#ff9bab) ;
+
+main .Dashcontainer .two .two {
+    background-color: #01112f;
+    border: 2px solid rgb(19, 37, 80);
 }
-main .Dashcontainer .two .three{
-    background:linear-gradient(to right ,#039767,#7aeec9) ;
+
+main .Dashcontainer .two .three {
+    background-color: #01112f;
+    border: 2px solid rgb(19, 37, 80);
 }
 
 

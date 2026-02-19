@@ -90,6 +90,9 @@
     justify-content: space-around;
 }
 
+ .cartsection2  .container2 button{
+        padding:10px 20px;
+  }
 
 
 
@@ -125,5 +128,11 @@
     border-radius: 10px;
     max-height: 70vh;
 }
+
+
+ .cartsection2  .container2 button{
+        padding:10px 10px;
+  }
+
 
 }

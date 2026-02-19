@@ -23,7 +23,7 @@ main .Dashcontainer {
 main .Dashcontainer .two h1 {
     text-transform: capitalize;
     color: #67b0fe;
-    font-size: 2.4rem;
+    
 }
 
 main .Dashcontainer .two {
@@ -59,6 +59,7 @@ main .Dashcontainer .two .box h1 {
 
 main .Dashcontainer .two .box h2 {
     color: rgba(255, 255, 255, 0.792);
+    font-size: 1.2rem;
 }
 
 main .Dashcontainer .two .box h5 {
@@ -84,7 +85,7 @@ main .Dashcontainer .two .three {
 }
 
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:800px) {
 
 
     main .Dashcontainer .two {
@@ -92,6 +93,23 @@ main .Dashcontainer .two .three {
         display: flex;
         flex-direction: column;
     }
+
+    main .Dashcontainer .two .box {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    main .Dashcontainer .two h1 {
+    text-transform: capitalize;
+    color: #67b0fe;
+    font-size: 1.5rem;
+}
 
 
 }

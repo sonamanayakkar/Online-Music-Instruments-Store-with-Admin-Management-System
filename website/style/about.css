@@ -16,21 +16,32 @@
     background-color: var(--dark-color);
 }
 
+.aboutsection3 .box{
+    border:1px rgba(255, 255, 255, 0.382) solid;
+    transition: .4s ease;
+}
+
+.aboutsection3 .box:hover{
+    transform: translateY(-10px) scale(1.1);
+    box-shadow: 0px 0px 10px 1px rgb(143, 143, 143);
+}
+
 
 .aboutsection3 .mem1 {
     height: 70vh;
+    overflow: hidden;
+   
 }
 
-.aboutsection3 .persion1 {
-    background: url(../../images/about/mem1.jpg) no-repeat;
-    background-position: center;
-    background-size: cover;
+.aboutsection3 .mem1 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .3s ease-out;
 }
 
-.aboutsection3 .persion2 {
-    background: url(../../images/about/mem2.jpg) no-repeat;
-    background-position: center;
-    background-size: cover;
+.aboutsection3 .mem1:hover img{
+    transform: rotate(10deg) scale(1.3);
 }
 
 /*-------------------aboutsection4-----------*/

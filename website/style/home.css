@@ -37,6 +37,8 @@
     height: 20px;
 }
 
+
+
 .section1 {
 
     background: url(../../images/section1/bearded-man-playing-bass-guitar-with-spotlight-e1648202691415.jpg) no-repeat;
@@ -44,12 +46,16 @@
     background-size: cover;
 }
 
+
+
+
 .section1 header {
-    
+
     border-bottom: 1px solid gray;
 
 }
-.section1  .top{
+
+.section1 .top {
     width: 100%;
     background-color: rgb(0, 0, 0);
     z-index: 100;

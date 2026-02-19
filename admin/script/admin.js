@@ -63,7 +63,7 @@ form.addEventListener('submit', (e) => {
 
     if (response1 && response2) {
 
-        window.location.href="../../admin/dashboard.html"
+        window.location.href="./dashboard.html"
         
     } else {
 

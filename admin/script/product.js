@@ -1,7 +1,6 @@
 
 
 
-
 let url = document.querySelector("#url")
 let productname = document.querySelector("#pname")
 let orinalprz = document.querySelector("#orinalprz")
@@ -14,6 +13,30 @@ let error = document.querySelectorAll(".error")
 
 
 let form = document.querySelector("#form")
+
+
+
+let inputlenthset = (inputname,length) => {
+    inputname.addEventListener('keydown', (e) => {
+
+
+        if (e.key === "Backspace" || e.key === "Delete" || e.key === "ArrowLeft" || e.key === "ArrowRight" || e.key === "Tab") {
+            return;
+        }
+
+        if ((inputname.value).length > length) {
+            e.preventDefault()
+        }
+
+    })
+
+}
+
+inputlenthset(offer,1)
+inputlenthset(orinalprz,9)
+inputlenthset(discountprz,9)
+
+
 
 
 let filled1 = false;
@@ -96,7 +119,7 @@ form.addEventListener('submit', (e) => {
     }
     // product name verification
 
-    if ((productname.value) != "" && (productname.value).length>3) {
+    if ((productname.value) != "" && (productname.value).length > 3) {
         filled2 = true
         productname.style.border = ""
         error[1].innerText = ""
@@ -115,7 +138,7 @@ form.addEventListener('submit', (e) => {
 
     if ((orinalprz.value) != "") {
 
-        
+
         filled3 = true
 
         let roundop = Math.trunc(orinalprz.value);
@@ -149,7 +172,12 @@ form.addEventListener('submit', (e) => {
 
     }
 
+
+
     if ((offer.value) != "") {
+
+
+
         filled5 = true
         offer.style.border = ""
         error[4].innerText = ""

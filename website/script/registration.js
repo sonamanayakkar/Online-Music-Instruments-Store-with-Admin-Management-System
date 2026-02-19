@@ -7,9 +7,64 @@ let confirmpassword = document.querySelector("#confirmpassword")
 let form = document.querySelector("form")
 
 let error = document.querySelectorAll(".error")
+const closeeye1 = document.querySelector("#closeeye")
+const openeye1 = document.querySelector("#openeye")
+const closeeye2 = document.querySelector("#closeeye2")
+const openeye2 = document.querySelector("#openeye2")
+
+console.log(confirmpassword.value);
+console.log(password.value);
 
 
-console.log(typeof (fname.value));
+
+closeeye.addEventListener('click', () => {
+
+    openeye1.style.display = "block"
+    closeeye1.style.display = "none"
+    let attribute = password.getAttribute('type')
+    console.log(attribute);
+    password.setAttribute("type", 'password')
+
+
+
+})
+openeye.addEventListener('click', () => {
+
+    openeye1.style.display = "none"
+    closeeye1.style.display = "block"
+    let attribute = password.getAttribute('type')
+    console.log(attribute);
+    password.setAttribute("type", 'text')
+
+
+})
+closeeye2.addEventListener('click', () => {
+
+    openeye2.style.display = "block"
+    closeeye2.style.display = "none"
+    let attribute = confirmpassword.getAttribute('type')
+
+    confirmpassword.setAttribute("type", 'password')
+
+
+
+})
+openeye2.addEventListener('click', () => {
+
+    openeye2.style.display = "none"
+    closeeye2.style.display = "block"
+    let attribute = confirmpassword.getAttribute('type')
+
+    confirmpassword.setAttribute("type", 'text')
+
+
+})
+
+
+
+
+
+
 
 let registrations = new Array()
 
@@ -20,7 +75,7 @@ let filled3 = false;
 
 
 form.addEventListener('submit', (e) => {
-    // debugger
+    debugger
     e.preventDefault();
 
     // name verification
@@ -108,15 +163,20 @@ form.addEventListener('submit', (e) => {
     //confirm password verification
 
     if ((confirmpassword.value) != "") {
+        debugger
         if ((password.value) == (confirmpassword.value)) {
             filled3 = true
             confirmpassword.style.border = ""
             error[3].innerText = ""
         } else {
-            filled3 = false
-            console.log("hi");
-            confirmpassword.style.border = "2px red solid"
-            error[3].innerText = "password missmatched"
+
+            if (password.value.length != 0) {
+                filled3 = false
+                console.log("hi");
+                confirmpassword.style.border = "2px red solid"
+                error[3].innerText = "password missmatched"
+            }
+
         }
     } else {
         filled3 = false

@@ -3,6 +3,34 @@ let username = document.querySelector("#admin_name")
 let password = document.querySelector("#password")
 let form = document.querySelector("form")
 let error = document.querySelectorAll(".error")
+const closeeye = document.querySelector("#closeeye")
+const openeye = document.querySelector("#openeye")
+
+
+
+
+
+closeeye.addEventListener('click', () => {
+
+    openeye.style.display = "block"
+    closeeye.style.display = "none"
+    let attribute = password.getAttribute('type')
+    console.log(attribute);
+    password.setAttribute("type", 'password')
+
+
+
+})
+openeye.addEventListener('click', () => {
+    openeye.style.display = "none"
+    closeeye.style.display = "block"
+    let attribute = password.getAttribute('type')
+    console.log(attribute);
+    password.setAttribute("type", 'text')
+
+
+})
+
 
 
 

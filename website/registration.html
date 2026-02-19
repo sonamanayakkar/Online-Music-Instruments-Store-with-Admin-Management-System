@@ -4,9 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <title>Registration</title>
     <link rel="stylesheet" href="../style/index.css">
-     <link rel="shortcut icon" href="../images/logo/3d-render-music-note-illustration-design.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/logo/3d-render-music-note-illustration-design.jpg" type="image/x-icon">
 </head>
 
 <body>
@@ -19,7 +24,7 @@
 
                 <div class="box">
                     <h2>Register here</h2>
-                   
+
                 </div>
                 <div class="box">
                     <label for="">User Name</label>
@@ -31,14 +36,24 @@
                     <input type="email" placeholder="Enter your mail" id="email">
                     <span class="error"></span>
                 </div>
-                <div class="box">
+                <div class="box password">
                     <label for="">Password</label>
-                    <input type="password" placeholder="Enter your password" id="password">
+                    <div class="input">
+                        <input type="password" placeholder="Enter your password" id="password" class="">
+                        <i class="fa-solid fa-eye-slash eye" id="closeeye" style="display: none;"></i>
+                        <i class="fa-solid fa-eye eye" id="openeye"></i></i>
+                    </div>
                     <span class="error"></span>
                 </div>
-                <div class="box">
+                <div class="box ">
                     <label for="">Confirm Password</label>
-                    <input type="text" placeholder="Enter your password" id="confirmpassword">
+
+                    <div class="input">
+                        <input type="password" placeholder="Re enter password " id="confirmpassword">
+                        <i class="fa-solid fa-eye-slash eye" id="closeeye2" style="display: none;"></i>
+                        <i class="fa-solid fa-eye eye" id="openeye2"></i></i>
+                    </div>
+
                     <span class="error"></span>
                 </div>
                 <div class="box">
@@ -48,7 +63,7 @@
                     <h4>Already have an account <a href="../index.html">Login here</a></h4>
                     <h4>Admin ?<a href="../admin/adminlogin.html"> Login here</a></h4>
                 </div>
-                
+
 
             </form>
         </div>
@@ -56,7 +71,7 @@
     </section>
 
 
-<script src="script/registration.js"></script>
+    <script src="script/registration.js"></script>
 </body>
 
 </html>

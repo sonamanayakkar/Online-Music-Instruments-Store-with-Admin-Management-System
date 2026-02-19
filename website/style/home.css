@@ -10,6 +10,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body{
+    overflow-x: hidden;
 }
 
 
@@ -57,7 +62,8 @@
 
 .section1 .top {
     width: 100%;
-    background-color: rgb(0, 0, 0);
+    background: linear-gradient(to bottom, rgb(0, 0, 0) 70%, rgba(253, 253, 253, 0.199));
+    /* background-color: rgb(0, 0, 0); */
     z-index: 100;
     position: fixed;
     top: 0;
@@ -78,27 +84,74 @@
 /*-------------animation--------------*/
 
 .section1 .guitaranimation {
-    /* position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
+
 
     width: 200px;
     height: 600px;
     background: url(../../images/section1/guitar\ animat.png) no-repeat;
     background-position: center;
     background-size: contain;
-    transition: 1s linear;
+    transition: transform 2s linear;
+
 }
+
+
+
+.section1 .guitaranimation:hover {
+
+    animation: guitar 1s linear alternate infinite;
+
+}
+
+@keyframes guitar {
+    from {
+        transform: rotate(0deg) translateY(0);
+    }
+
+    to {
+        transform: rotate(0deg) translateY(10px);
+    }
+
+
+}
+
+.section1 .banner1 {
+    animation: letter 2s ease;
+
+
+}
+
+
+@keyframes letter {
+    from{
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+} 
+
+
+.section1 .banner2 {
+    animation: letter2 2s ease;
+
+
+}
+
+
+@keyframes letter2 {
+    from{
+        opacity: 0;
+        transform: translateX(100%);
+    }
+} 
+
+
+
 
 .section1 .heading {
     font-size: 2.5rem;
 }
 
-/* .section1 .guitaranimation:hover {
 
-    transform: translate(-50%, -50%) rotate(20deg);
-} */
 
 
 /*-------------section-2---------------*/
@@ -137,6 +190,70 @@
     background: linear-gradient(to bottom, black, rgba(128, 128, 128, 0.158));
     /* background-color: rgba(0, 0, 0, 0.568); */
 }
+
+/*-------------animation--------------*/
+
+.section2 .about{
+    animation: scroll  ease;
+    animation-timeline: view();
+    animation-range: entry 20% cover 50vh;
+}
+
+@keyframes scroll {
+    from{
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+}
+.section2 .year{
+    animation: scroll2  ease;
+    animation-timeline: view();
+    animation-range: entry 20% cover 70vh;
+}
+
+@keyframes scroll2 {
+    from{
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+.section2 .collection{
+    animation: scroll3  ease;
+    animation-timeline: view();
+    animation-range: entry 0% cover 70vh;
+}
+
+@keyframes scroll3 {
+    from{
+        opacity: 0;
+        transform: translateY(100%);
+    }
+}
+.section2 .letters{
+    animation: scroll4  ease;
+    animation-timeline: view();
+    animation-range: entry 0% cover 70vh;
+}
+
+@keyframes scroll4 {
+    from{
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+.section2 .award{
+    animation: scroll5  ease;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40vh;
+}
+
+@keyframes scroll5 {
+    from{
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+}
+
 
 /*-------------section-3---------------*/
 .section3 {
@@ -196,7 +313,7 @@
 .section3 .cart {
     overflow: hidden;
     transition: .3s ease;
-    border: 1px gray solid;
+    border: 1px rgba(128, 128, 128, 0.682) solid;
     border-radius: 15px;
 }
 
@@ -209,12 +326,31 @@
 }
 
 .section3 .cart:hover {
-    box-shadow: 0px 0px 5px 1px white;
+    transform: translateY(-10px);
+    box-shadow: 0px 0px 5px 1px rgba(255, 255, 255, 0.467);
 }
 
 .section3 .cart:hover .sales {
     right: 0;
 }
+
+
+/*-------------animation--------------*/
+
+
+.section3 .cartlists{
+     animation: scroll1  ease-in;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40vh;
+}
+
+@keyframes scroll1 {
+    from{
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
 
 
 /*-------------section-4---------------*/

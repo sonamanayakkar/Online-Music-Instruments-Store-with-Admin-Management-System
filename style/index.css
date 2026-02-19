@@ -60,6 +60,7 @@ button {
 
 form .box input {
     color: white;
+    width: 100%;
     border: none;
     padding: 0 10px;
     background-color: rgba(128, 128, 128, 0.179);
@@ -67,6 +68,18 @@ form .box input {
 
 form .box input:focus {
     outline: 2px rgb(255, 81, 0) solid;
+}
+form .box .input{
+    display: flex;
+    align-items: center;
+}
+
+form .box .eye{
+    color: rgb(229, 229, 229);
+    position: absolute;
+    right: 20px;
+    cursor: pointer;
+   
 }
 
 form .box button {

@@ -4,9 +4,37 @@ let email = document.querySelector("#email")
 let password = document.querySelector("#password")
 let error = document.querySelectorAll(".error")
 let reglocation = document.querySelector(".reglocation")
+const closeeye = document.querySelector("#closeeye")
+const openeye = document.querySelector("#openeye")
 
 
 let form = document.querySelector("form")
+
+
+
+closeeye.addEventListener('click', () => {
+
+    openeye.style.display = "block"
+    closeeye.style.display = "none"
+    let attribute = password.getAttribute('type')
+    console.log(attribute);
+    password.setAttribute("type", 'password')
+
+
+
+})
+openeye.addEventListener('click', () => {
+    openeye.style.display = "none"
+    closeeye.style.display = "block"
+    let attribute = password.getAttribute('type')
+    console.log(attribute);
+    password.setAttribute("type", 'text')
+
+
+})
+
+
+
 
 
 function getitems(params) {
@@ -99,12 +127,12 @@ function userdetailchecker() {
 
     }
 
-    else{
-        
+    else {
+
         reglocation.classList.add("gloweffect")
-        
+
         alert("Username not found so please registration first")
-        window.location.href="website/registration.html"
+        window.location.href = "website/registration.html"
     }
 
 }

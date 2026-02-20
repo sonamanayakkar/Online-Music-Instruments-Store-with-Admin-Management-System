@@ -15,10 +15,12 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 
-    <title>Rhythmix  Store</title>
+    <title>Rhythmix Store</title>
     <link rel="stylesheet" href="style/home.css">
     <link rel="stylesheet" href="style/cart.css">
-     <link rel="shortcut icon" href="../images/logo/3d-render-music-note-illustration-design.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/logo/3d-render-music-note-illustration-design.jpg" type="image/x-icon">
+
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.20/dist/sweetalert2.min.css" rel="stylesheet">
 
 </head>
 
@@ -28,7 +30,7 @@
         <div class="container-fluid outercontainer pb-5">
 
 
-             <header>
+            <header>
                 <nav class="navbar navbar-expand-lg navbar-light   px-md-5">
                     <div class="container-fluid">
                         <a class="navbar-brand fs-2 text-warning fw-bold" href="#">Rhythmix</a>
@@ -46,9 +48,9 @@
                                 <li class="nav-item">
                                     <a class="nav-link text-white fw-normal" href="shop.html">Shop</a>
                                 </li>
-                                <li class="nav-item">
+                                <!-- <li class="nav-item">
                                     <a class="nav-link text-white fw-normal" href="#">Blog</a>
-                                </li>
+                                </li> -->
                                 <li class="nav-item">
                                     <a class="nav-link text-white fw-normal" href="contact.html">Contact</a>
                                 </li>
@@ -57,7 +59,8 @@
                             <form class="d-flex">
                                 <input class="form-control me-2 " type="search" placeholder="Search"
                                     aria-label="Search">
-                                <button class="btn bgorange" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                <button class="btn bgorange" type="submit"><i
+                                        class="fa-solid fa-magnifying-glass"></i></button>
                             </form>
 
                         </div>
@@ -73,7 +76,7 @@
 
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active text-white fs-4" aria-current="page" href="#" id="exist">><i
+                                <a class="nav-link active text-white fs-4" aria-current="page" href="#" id="exist"><i
                                         class="fa-solid fa-right-from-bracket ms-2"></i></a>
                             </li>
                         </ul>
@@ -159,7 +162,8 @@
 
             <div class=" container2 buycontainer   w-100 mt-4  py- mb-5">
 
-                <h4 class="text-white">Total Amount: <span class="orange">$ <span class="total_amount" id="total_amount"></span></span></h4>
+                <h4 class="text-white">Total Amount: <span class="orange">$ <span class="total_amount"
+                            id="total_amount"></span></span></h4>
                 <button type="button" class="btn  bgorange  fw-bold  mt-md-0 " id="buy_now">Buy Now</button>
 
             </div>
@@ -275,6 +279,11 @@
 
 
     <script src="script/cart.js"></script>
+
+
+    <script src="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.26.20/dist/sweetalert2.all.min.js
+"></script>
 </body>
 
 </html>

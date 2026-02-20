@@ -113,4 +113,10 @@
     .aboutsection5 .container .row {
       gap: 10vh;
     }
+
+    .aboutsection5 .container .col {
+    width: 400px;
+    position: relative;
+    height: 56vh;
+}
 }

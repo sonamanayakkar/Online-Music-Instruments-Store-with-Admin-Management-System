@@ -1,15 +1,15 @@
 let logoutbutton = document.querySelector("#exist")
 
-logoutbutton.addEventListener('click',()=>{
+logoutbutton.addEventListener('click', () => {
 
     const conformation = confirm("Do you want logout ?")
 
     if (conformation) {
 
         setTimeout(() => {
-            window.location.href="../index.html"
+            window.location.href = "../index.html"
         }, 1000);
-        
+
     }
 })
 
@@ -219,19 +219,54 @@ let buyingprocess = () => {
 
     buy_button.addEventListener('click', (e) => {
 
-        let orderconformation = confirm(`let confirm your order\n total price:${totalamount.innerText}`)
+        // let orderconformation = confirm(`let confirm your order\n total price:${totalamount.innerText}`)
 
-        if (orderconformation) {
-            console.log(datafrom_db);
-            setitems([], "cart_items")
-            upload()
-            total()
+        Swal.fire({
+            title: "Confirm Your Order?",
+            text: `Total price ₹ ${totalamount.innerText}`,
+            icon: "question",
+            showCancelButton: true,
+            confirmButtonColor: "#00cb11",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Order"
+        }).then((result) => {
+            if (result.isConfirmed) {
 
-            cartcount()
-            alert("✅ Thank you for your purchase!")
+                console.log(datafrom_db);
+                setitems([], "cart_items")
+                upload()
+                total()
+
+                cartcount()
 
 
-        }
+                Swal.fire({
+                    title: "Thank You for Your Purchase!",
+                    text: "Your order is on its way.",
+                    icon: "success"
+                });
+            }
+        });
+
+        // if (orderconformation) {
+        //     console.log(datafrom_db);
+        //     setitems([], "cart_items")
+        //     upload()
+        //     total()
+
+        //     cartcount()
+
+        //     setTimeout(() => {
+        //         Swal.fire({
+        //             title: "Thank You for Your Purchase!",
+        //             icon: "success",
+        //             draggable: true
+        //         });
+        //     }, 500);
+
+
+
+        // }
 
 
 
@@ -248,7 +283,7 @@ let upload = () => {
     let getdatafrom_db = getitems("cart_items") || []
 
     let container = document.querySelector("#cartcontainer")
-    let buybutton=  document.querySelector(".buycontainer")
+    let buybutton = document.querySelector(".buycontainer")
     let row = "";
 
 
@@ -275,7 +310,7 @@ let upload = () => {
                         </div>
 
                         <div class="delete">
-                            <i class="fa-regular fa-trash-can fs-5 fs-md-2 text-danger" onclick="deleteitem(${element.id})"></i>
+                            <i class="fa-regular fa-trash-can fs-lg-2 fs-5  text-danger" onclick="deleteitem(${element.id})"></i>
                         </div>
 
                     </div>
@@ -285,10 +320,10 @@ let upload = () => {
 
     if ((getdatafrom_db).length < 1) {
         container.innerHTML = nodatafound();
-        buybutton.style.display="none"
+        buybutton.style.display = "none"
     } else {
         container.innerHTML = row;
-        buybutton.style.display="flex"
+        buybutton.style.display = "flex"
     }
 
 
@@ -322,6 +357,10 @@ let deleteitem = (productid) => {
             return element
         }
     })
+
+
+
+    
 
     if (conformation) {
 
@@ -390,13 +429,13 @@ document.addEventListener('scroll', (e) => {
 
 
     if (scroll > 250) {
-          
+
 
         header.classList.add("top")
     }
 
-    else{
-          header.classList.remove("top")
+    else {
+        header.classList.remove("top")
     }
 
 })

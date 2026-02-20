@@ -116,7 +116,7 @@ let upload = () => {
 
 
 document.addEventListener('click', (e) => {
-     debugger
+     
    
     let btn= e.target.closest(".addtocart");
      if (!btn) return;

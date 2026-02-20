@@ -1,4 +1,17 @@
+let logoutbutton = document.querySelector("#exist")
 
+logoutbutton.addEventListener('click',()=>{
+
+    const conformation = confirm("Do you want logout ?")
+
+    if (conformation) {
+
+        setTimeout(() => {
+            window.location.href="../index.html"
+        }, 1000);
+        
+    }
+})
 
 let setitems = (settingarray, Keyname) => {
     let obj = JSON.stringify(settingarray)

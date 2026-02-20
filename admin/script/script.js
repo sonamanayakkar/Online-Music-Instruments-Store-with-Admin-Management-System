@@ -31,6 +31,7 @@ logout.addEventListener('click',(e)=>{
 
 
 menu.addEventListener('click',()=>{
+   
    aside.classList.add('aside1');
 })
 crossmark.addEventListener('click',()=>{

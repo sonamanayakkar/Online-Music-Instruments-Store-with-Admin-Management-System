@@ -43,7 +43,7 @@ function getitems(params) {
     return conversion;
 }
 
-let usersfromdb = getitems("Users")
+let usersfromdb = getitems("Users") || []
 console.log(usersfromdb);
 
 
@@ -56,10 +56,23 @@ form.addEventListener('submit', (e) => {
     let response2 = false
 
     if (email.value != "") {
+        debugger
 
-        response1 = true
-        email.style.border = "";
-        error[0].innerText = ""
+        let mail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        let conformation = mail.test(email.value)
+
+        if (conformation) {
+            response1 = true
+            email.style.border = "";
+            error[0].innerText = ""
+        }
+        else {
+            response1 = false
+            email.style.border = "2px solid red";
+            error[0].innerText = "Please enter a valid email address!"
+        }
+
 
 
 
@@ -100,40 +113,37 @@ form.addEventListener('submit', (e) => {
 
 function userdetailchecker() {
 
-    if (usersfromdb != null) {
 
+    console.log(usersfromdb);
 
-        for (let ele of usersfromdb) {
-            console.log(ele.email);
-            console.log(ele.password);
-
-            if (((ele.email) == (email.value)) && ((ele.password) == (password.value))) {
-                debugger
-                alert("Verification Successfull!")
-
-                email.value = ""
-                password.value = ""
-
-                window.location.href = "website/home.html";
-
-            }
-
-            else {
-                alert("invalid access!")
-            }
-
-        }
-
+    for (let element of usersfromdb) {
+        console.log(element);
 
     }
 
+    let user = usersfromdb.find(n => (n.email == email.value) && (n.password == password.value)
+    )
+
+
+
+
+    if (user) {
+        alert("Login Successfull!")
+        email.value = ""
+        password.value = ""
+        window.location.href = "website/home.html"
+    }
     else {
+        alert("User not found ")
+        email.value = ""
+        password.value = ""
 
-        reglocation.classList.add("gloweffect")
 
-        alert("Username not found so please registration first")
-        window.location.href = "website/registration.html"
     }
+
+
+
+
 
 }
 

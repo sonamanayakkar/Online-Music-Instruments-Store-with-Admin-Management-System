@@ -64,8 +64,6 @@ openeye2.addEventListener('click', () => {
 
 
 
-
-
 let registrations = new Array()
 
 let filled1 = false;
@@ -75,7 +73,7 @@ let filled3 = false;
 
 
 form.addEventListener('submit', (e) => {
-    debugger
+   
     e.preventDefault();
 
     // name verification
@@ -92,7 +90,7 @@ form.addEventListener('submit', (e) => {
         else {
             filled1 = false
             fname.style.border = "2px red solid"
-            error[0].innerText = "Please Enter valid Url"
+            error[0].innerText = "Please Enter your name"
             console.log("wrong Url");
         }
 
@@ -235,6 +233,36 @@ form.addEventListener('submit', (e) => {
 })
 
 
+document.addEventListener('DOMContentLoaded',(e)=>{
+    let datafromdb= getitems("Users")
+    console.log(datafromdb);
+
+    debugger
+    datafromdb.forEach(element => {
+        registrations.push(element)
+        setitems(registrations)
+    });
+    
+       
+})
+
+
+let setitems = (settingarray) => {
+    let obj = JSON.stringify(settingarray)
+    localStorage.setItem("Users", obj)
+}
+
+let getitems = (db) => {
+
+    let getter = localStorage.getItem(db)
+
+    let conversion = JSON.parse(getter);
+
+    return conversion;
+
+}
+
+
 
 function clearall() {
     fname.value = ""
@@ -243,3 +271,5 @@ function clearall() {
     confirmpassword.value = ""
 
 }
+
+

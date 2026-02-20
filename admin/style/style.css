@@ -111,6 +111,7 @@ header .profile .nation {
     font-size: 20px;
     cursor: pointer;
     color: rgb(255, 255, 255);
+    display: none;
 }
 
 header .fa-magnifying-glass {
@@ -214,12 +215,14 @@ section aside .menulist ul li:hover {
 
 
 section aside .menulist ul li a {
+    text-transform: capitalize;
     text-decoration: none;
     color: #ffffff;
     font-size: 1.2rem;
 }
 
 section aside .menulist ul li:hover a {
+    
     color: white;
 }
 
@@ -437,6 +440,13 @@ footer {
     header .input input {
         display: none;
     }
+
+    .fa-list {
+    font-size: 20px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    display: block;
+}
 
 
 

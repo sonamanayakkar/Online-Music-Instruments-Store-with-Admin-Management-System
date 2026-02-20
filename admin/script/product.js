@@ -15,6 +15,13 @@ let error = document.querySelectorAll(".error")
 let form = document.querySelector("#form")
 
 
+offer.addEventListener('input',()=>{
+  let percentage = ((offer.value/100)*orinalprz.value)
+  let finalprice = orinalprz.value-percentage
+  discountprz.value=finalprice
+})
+
+
 
 let inputlenthset = (inputname,length) => {
     inputname.addEventListener('keydown', (e) => {
@@ -89,7 +96,7 @@ let getitems = (db) => {
 
 
 form.addEventListener('submit', (e) => {
-    // debugger
+
     e.preventDefault()
 
     // url verification
@@ -196,15 +203,16 @@ form.addEventListener('submit', (e) => {
 
         let [one, two, three] = roundingvalues(orinalprz, discountprz, offer)
 
-        debugger
+
 
 
         if (iseditclicked) {
 
             setitems(uploadeditcode())
 
-            console.log(uploadeditcode());
+            // console.log(uploadeditcode());
             clearall()
+            
 
             upload()
 
@@ -238,6 +246,7 @@ form.addEventListener('submit', (e) => {
             productlist.push(details)
             setitems(productlist)
             upload()
+            alert("Product added Successfully!")
         }
 
     }
@@ -270,9 +279,9 @@ let upload = () => {
     let tbody = document.querySelector("tbody");
     let row = "";
     let count = 0;
-    // debugger
+
     for (let ele of getitems("products")) {
-        // console.log(ele.pname);
+     
         count++
         row += `
 
@@ -299,14 +308,14 @@ let upload = () => {
     
     `;
     }
-    // console.log(row);
+  
     tbody.innerHTML = row
 }
 
 
 function remove(selectedtrash) {
 
-    debugger
+
     let conformation = confirm("Do you want to delete selected product ?")
     let deletelists = getitems("products");
 
@@ -322,6 +331,7 @@ function remove(selectedtrash) {
 
     if (conformation) {
         setitems(elementruturn)
+        alert("product removed✅")
 
         getitems("products")
 
@@ -350,7 +360,7 @@ function remove(selectedtrash) {
 }
 
 function edit(selecteditId) {
-    debugger
+
     iseditclicked = true;
     console.log("hi");
 
@@ -365,7 +375,7 @@ function edit(selecteditId) {
     let offer = document.querySelector("#offer")
     let product_id = document.querySelector("#ID")
 
-    idbox.style.display = "flex"
+    idbox.style.display = "none"
     submitbtn.innerText = "edit"
 
     let getfromdbs = getitems("products")
@@ -379,7 +389,7 @@ function edit(selecteditId) {
     })
 
     //then matchedid comes as ayyar format like [{}] so i need to unpack that
-    // console.log(matchingid);
+   
 
     // unpacked array
     let [selected] = matchingid;
@@ -402,7 +412,7 @@ function edit(selecteditId) {
 
 
 function uploadeditcode() {
-    debugger
+
     let submit = document.querySelector("#submit")
     let idbox = document.querySelector(".idbox")
     let url = document.querySelector("#url")
@@ -411,7 +421,7 @@ function uploadeditcode() {
     let discountprz = document.querySelector("#discountprz")
     let offer = document.querySelector("#offer")
     let product_id = document.querySelector("#ID")
-    debugger
+
 
     idbox.style.display = "none"
     // submit.innerText = "EDIT"
@@ -427,12 +437,12 @@ function uploadeditcode() {
     }
 
     let getfromdbs = getitems("products")
-    // console.log(getfromdbs);
+   
 
 
     let mapingid = getfromdbs.map((arr) => {
 
-        // console.log(arr);
+      
 
         if (arr.id == details.id) {
             return details
@@ -443,7 +453,7 @@ function uploadeditcode() {
 
     })
 
-    // debugger
+ 
 
     // console.log(mapingid); // [{},{}]
 
@@ -467,10 +477,10 @@ function clearall() {
 
 document.addEventListener('DOMContentLoaded', (e) => {
     upload()
-    // console.log(productlist);
+    
 
     let datafromlocalstorage = getitems("products")
-    // console.log(datafromlocalstorage);
+  
 
     datafromlocalstorage.forEach(element => {
         productlist.push(element)

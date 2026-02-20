@@ -1,4 +1,21 @@
 
+
+let logoutbutton = document.querySelector("#exist")
+
+logoutbutton.addEventListener('click',()=>{
+
+    const conformation = confirm("Do you want logout ?")
+
+    if (conformation) {
+
+        setTimeout(() => {
+            window.location.href="../index.html"
+        }, 1000);
+        
+    }
+})
+
+
 let addcart_productlists = new Array();
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -75,8 +92,8 @@ let upload = () => {
                                 <h5 class="card-title text-white productname">${element.pname}</h5>
 
                                 <h6>
-                                    <del class="text-white-50 ">$${element.originalprice}</del>
-                                    <span class="orange  ">$ <span class="finalprice">${element.discountprice}</span></span>
+                                    <del class="text-white-50 ">₹${element.originalprice}</del>
+                                    <span class="orange  ">₹ <span class="finalprice">${element.discountprice}</span></span>
                                 </h6>
                                 <button type="submit" class="btn fw-bold   p-2 addtocart" id="" data-id="${count}"><i
                                         class="fa-brands fa-opencart me-2"></i>Add to cart</button>
@@ -170,7 +187,7 @@ document.addEventListener('click', (e) => {
 let cartcount = () => {
     let totalcarts = document.getElementById("cartcount")
 
-    let valuefromdb = getitems("cart_items")
+    let valuefromdb = getitems("cart_items")||[]
     console.log("this is");
 
     // console.log(valuefromdb.length);

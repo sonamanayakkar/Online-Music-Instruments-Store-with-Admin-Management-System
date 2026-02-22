@@ -289,10 +289,12 @@ let buyingprocess = () => {
 
 function sendmail() {
 
+    let totalprice = 0;
+   
     let datafrom_db = getitems("cart_items");
 
     let productsarray = new Array()
-    let totalprice=0;
+
     datafrom_db.forEach(element => {
         let products = {
             image: element.image,
@@ -300,13 +302,14 @@ function sendmail() {
             units: element.quantity,
             price: element.price
         }
-        totalprice+=Number(element.price);
+        totalprice += Number(element.price);
         productsarray.push(products);
     });
 
     let datafromsession = sessionStorage.getItem("currentuser")
 
     let user = JSON.parse(datafromsession)
+
 
     const templateparameters = {
         email: user.email,
@@ -315,14 +318,14 @@ function sendmail() {
         orders: productsarray,
 
         cost: {
-            shipping: 42,
-            tax: 199.5,
-            total: totalprice-(42+199.5)
+
+            total: totalprice
+
         }
     }
 
     emailjs.send("service_ecqfehk", "template_9m06uaw", templateparameters)
-        .then(() => alert("Sent successfully"), setitems([], "cart_items"))
+        .then(() => console.log("successfully"), setitems([], "cart_items"))
         .catch(err => alert("Failed"));
 }
 
@@ -489,5 +492,20 @@ document.addEventListener('scroll', (e) => {
     }
 
 })
+
+
+let fun=()=>{
+    let a=10
+    let b=20
+    return [a,b]
+}
+
+let sum =fun()
+console.log(sum);
+console.log(sum[0]);
+
+
+
+
 
 

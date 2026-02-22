@@ -16,7 +16,12 @@
     color: white;
 }
 
+#error{
+    color: red;
+}
+
 .contactsection2 .container2 form textarea{
     height: 30vh;
     background-color: transparent;
+    color: white;
 }

@@ -16,10 +16,10 @@
         crossorigin="anonymous"></script>
 
 
-     <title>Rhythmix  Store</title>
+    <title>Rhythmix Store</title>
     <link rel="stylesheet" href="style/home.css">
     <link rel="stylesheet" href="style/contact.css">
-     <link rel="shortcut icon" href="../images/logo/3d-render-music-note-illustration-design.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/logo/3d-render-music-note-illustration-design.jpg" type="image/x-icon">
 
 </head>
 
@@ -29,7 +29,7 @@
         <div class="container-fluid outercontainer pb-5">
 
 
-               <header>
+            <header>
                 <nav class="navbar navbar-expand-lg navbar-light   px-md-5">
                     <div class="container-fluid">
                         <a class="navbar-brand fs-2 text-warning fw-bold" href="#">Rhythmix</a>
@@ -58,7 +58,8 @@
                             <form class="d-flex">
                                 <input class="form-control me-2 " type="search" placeholder="Search"
                                     aria-label="Search">
-                                <button class="btn bgorange" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                <button class="btn bgorange" type="submit"><i
+                                        class="fa-solid fa-magnifying-glass"></i></button>
                             </form>
 
                         </div>
@@ -119,19 +120,21 @@
                             </div>
 
                             <div class="col-12 col-md-6 d-flex flex-column gap-4">
-                                <form class="row g-3 needs-validation" novalidate>
+                                <form class="row g-3 needs-validation form" novalidate>
                                     <div class="col-md-12">
                                         <label for="validationCustom01" class="form-label text-white">Name</label>
-                                        <input type="text" class="form-control" id="validationCustom01" value=""
-                                            required>
+                                        <input type="text" class="form-control username" id="validationCustom01"
+                                            value="" required>
+                                        <span id="error"></span>
                                         <div class="valid-feedback">
                                             Looks good!
                                         </div>
                                     </div>
                                     <div class="col-md-12">
-                                        <label for="validationCustom02" class="form-label text-white">Phone</label>
-                                        <input type="number" class="form-control" id="validationCustom02" value=""
+                                        <label for="validationCustom02" class="form-label text-white ">Phone</label>
+                                        <input type="number" class="form-control phone" id="validationCustom02" value=""
                                             required>
+                                        <span id="error"></span>
                                         <div class="valid-feedback">
                                             Looks good!
                                         </div>
@@ -139,16 +142,19 @@
 
                                     <div class="col-md-12">
                                         <label for="validationCustom02" class="form-label text-white">Email</label>
-                                        <input type="email" class="form-control" id="validationCustom02" value=""
+                                        <input type="email" class="form-control email" id="validationCustom02" value=""
                                             required>
+                                        <span id="error"></span>
                                         <div class="valid-feedback">
                                             Looks good!
                                         </div>
                                     </div>
                                     <div class="col-md-12">
-                                        <label for="validationCustom02" class="form-label text-white">Message</label>
-                                        <textarea class="form-control is-invalid" id="validationTextarea"
+                                        <label for="validationCustom02"
+                                            class="form-label text-white ">Message</label>
+                                        <textarea class="form-control message" id="validationTextarea"
                                             placeholder="Required example textarea" required></textarea>
+                                        <span id="error"></span>
                                         <div class="valid-feedback">
                                             Looks good!
                                         </div>
@@ -288,7 +294,7 @@
 
 
 
-<script src="script/contact.js"></script>
+    <script src="script/contact.js"></script>
 </body>
 
 </html>

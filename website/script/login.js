@@ -129,6 +129,15 @@ function userdetailchecker() {
 
     if (user) {
         alert("Login Successfull!")
+
+
+        let oneuser={
+            email:email.value
+        }
+
+        let conversion=JSON.stringify(oneuser)
+        sessionStorage.setItem("currentuser",conversion)
+
         email.value = ""
         password.value = ""
         window.location.href = "website/home.html"

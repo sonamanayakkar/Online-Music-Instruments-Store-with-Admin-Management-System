@@ -19,7 +19,8 @@
 
 
 .orange {
-     color: #67b0fe;;
+    color: #67b0fe;
+    ;
 }
 
 .error {
@@ -222,7 +223,7 @@ section aside .menulist ul li a {
 }
 
 section aside .menulist ul li:hover a {
-    
+
     color: white;
 }
 
@@ -344,6 +345,7 @@ main .table {
 }
 
 main .table table {
+    /* table-layout: fixed; */
     overflow: hidden;
     border-collapse: collapse;
     border-radius: 20px;
@@ -403,6 +405,39 @@ main .table table tr .actions i {
     color: rgb(143, 143, 143);
 }
 
+main .table table tr #message_box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main .table table tr #message_box p {
+    width: 400px;
+    max-height: 20vh;
+    overflow: auto;
+    overflow-wrap: break-word;
+}
+
+main .table table tr #message_box p::-webkit-scrollbar {
+    width: 10px;
+    background-color: transparent;
+
+}
+
+main .table table tr #message_box p::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    /* color of the tracking area */
+    border-radius: 10px;
+}
+
+main .table table tr #message_box p::-webkit-scrollbar-thumb {
+    background-color: #6b6b6b;
+    border-radius: 10px;
+
+}
+
+
+
 
 
 /*--------------footer--------------*/
@@ -442,11 +477,11 @@ footer {
     }
 
     .fa-list {
-    font-size: 20px;
-    cursor: pointer;
-    color: rgb(255, 255, 255);
-    display: block;
-}
+        font-size: 20px;
+        cursor: pointer;
+        color: rgb(255, 255, 255);
+        display: block;
+    }
 
 
 
@@ -578,8 +613,15 @@ footer {
         overflow: auto;
     }
 
+    main .table table td {
+    color: rgb(255, 255, 255);
+    font-size: .88rem;
+    padding: 20px;
+    text-align: center;
+}
 
-    
+
+
 
 
 

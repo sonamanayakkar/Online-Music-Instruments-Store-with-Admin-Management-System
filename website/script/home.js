@@ -26,7 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
     let valuefromdb = getitems("cart_items")
 
     if (valuefromdb) {
@@ -130,9 +129,6 @@ document.addEventListener('click', (e) => {
         let image = container.querySelector("img")
         let productname = container.querySelector(".productname")
         let finalprice = container.querySelector(".finalprice")
-
-        // console.log(finalprice.innerText);
-        // console.log(productname.innerText);
 
         debugger
         let collectionof_product = {

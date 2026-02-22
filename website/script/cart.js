@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
     let plus = document.querySelectorAll(".plus")
     let minus = document.querySelectorAll(".minus")
     // let price = document.querySelectorAll(".price")
-    console.log(plus);
+
 
     total()
 
@@ -64,7 +64,7 @@ let increment = (plusbtn_value) => {
 
     })
 
-    debugger
+
 
     let [unpack] = filterdata
 
@@ -233,11 +233,7 @@ let buyingprocess = () => {
             if (result.isConfirmed) {
 
                 console.log(datafrom_db);
-                setitems([], "cart_items")
-                upload()
-                total()
 
-                cartcount()
 
 
                 Swal.fire({
@@ -245,8 +241,23 @@ let buyingprocess = () => {
                     text: "Your order is on its way.",
                     icon: "success"
                 });
+
+
+
+                sendmail()
+                setitems([], "cart_items")
+                upload()
+                total()
+
+                cartcount()
+
             }
         });
+
+
+
+
+
 
         // if (orderconformation) {
         //     console.log(datafrom_db);
@@ -273,6 +284,46 @@ let buyingprocess = () => {
     })
 
 
+}
+
+
+function sendmail() {
+
+    let datafrom_db = getitems("cart_items");
+
+    let productsarray = new Array()
+    let totalprice=0;
+    datafrom_db.forEach(element => {
+        let products = {
+            image: element.image,
+            name: element.productname,
+            units: element.quantity,
+            price: element.price
+        }
+        totalprice+=Number(element.price);
+        productsarray.push(products);
+    });
+
+    let datafromsession = sessionStorage.getItem("currentuser")
+
+    let user = JSON.parse(datafromsession)
+
+    const templateparameters = {
+        email: user.email,
+        ordorder_id: Date.now(),
+
+        orders: productsarray,
+
+        cost: {
+            shipping: 42,
+            tax: 199.5,
+            total: totalprice-(42+199.5)
+        }
+    }
+
+    emailjs.send("service_ecqfehk", "template_9m06uaw", templateparameters)
+        .then(() => alert("Sent successfully"), setitems([], "cart_items"))
+        .catch(err => alert("Failed"));
 }
 
 
@@ -360,7 +411,7 @@ let deleteitem = (productid) => {
 
 
 
-    
+
 
     if (conformation) {
 
@@ -407,7 +458,7 @@ let cartcount = () => {
     let totalcarts = document.getElementById("cartcount")
 
     let valuefromdb = getitems("cart_items")
-    console.log("this is");
+
 
     // console.log(valuefromdb.length);
 
@@ -423,7 +474,6 @@ let cartcount = () => {
 
 document.addEventListener('scroll', (e) => {
     let header = document.querySelector("header")
-    console.log(window.scrollY);
 
     let scroll = window.scrollY
 
@@ -439,3 +489,5 @@ document.addEventListener('scroll', (e) => {
     }
 
 })
+
+

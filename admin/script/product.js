@@ -3,6 +3,7 @@
 
 let url = document.querySelector("#url")
 let productname = document.querySelector("#pname")
+let category = document.querySelector("#select")
 let orinalprz = document.querySelector("#orinalprz")
 let discountprz = document.querySelector("#discountprz")
 let offer = document.querySelector("#offer")
@@ -96,6 +97,8 @@ let getitems = (db) => {
 
 
 form.addEventListener('submit', (e) => {
+    
+    
 
     e.preventDefault()
 
@@ -238,6 +241,7 @@ form.addEventListener('submit', (e) => {
                 id: Date.now(),
                 url: url.value,
                 pname: productname.value,
+                category:category.value,
                 originalprice: one,
                 discountprice: two,
                 offerpercentage: three
@@ -293,6 +297,7 @@ let upload = () => {
                                 </div>
                             </td>
                             <td> ${ele.pname}</td>
+                            <td> ${ele.category}</td>
                             <td>₹ ${ele.originalprice}</td>
                             <td>₹ ${ele.discountprice}</td>
                             <td>${ele.offerpercentage} %</td>
@@ -401,6 +406,7 @@ function edit(selecteditId) {
     product_id.value = selected.id
     url.value = selected.url
     productname.value = selected.pname
+    category.value = selected.category
     orinalprz.value = selected.originalprice
     discountprz.value = selected.discountprice
     offer.value = selected.offerpercentage
@@ -417,6 +423,7 @@ function uploadeditcode() {
     let idbox = document.querySelector(".idbox")
     let url = document.querySelector("#url")
     let productname = document.querySelector("#pname")
+    let category = document.querySelector("#select")
     let orinalprz = document.querySelector("#orinalprz")
     let discountprz = document.querySelector("#discountprz")
     let offer = document.querySelector("#offer")
@@ -431,6 +438,7 @@ function uploadeditcode() {
         id: Number(product_id.value),
         url: url.value,
         pname: productname.value,
+        category:category.value,
         originalprice: Number(orinalprz.value),
         discountprice: Number(discountprz.value),
         offerpercentage: Number(offer.value)

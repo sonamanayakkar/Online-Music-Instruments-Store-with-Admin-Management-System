@@ -321,6 +321,15 @@ main .forms form .box input:focus {
     box-shadow: 0px 0px 10px 5px rgb(0, 0, 0);
 }
 
+main .forms form select {
+    padding-left: 20px;
+    background-color: rgb(11, 25, 66);
+    height: 6vh;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 10px;
+}
+
 main .forms form .buttonbox {
     display: flex;
     justify-content: space-between;
@@ -614,11 +623,11 @@ footer {
     }
 
     main .table table td {
-    color: rgb(255, 255, 255);
-    font-size: .88rem;
-    padding: 20px;
-    text-align: center;
-}
+        color: rgb(255, 255, 255);
+        font-size: .88rem;
+        padding: 20px;
+        text-align: center;
+    }
 
 
 

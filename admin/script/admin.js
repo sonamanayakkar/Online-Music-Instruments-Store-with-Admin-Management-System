@@ -50,7 +50,7 @@ form.addEventListener('submit', (e) => {
         } else {
             response1 = false
             username.style.border = "2px solid red";
-            error[0].innerText = "User name wrong"
+            error[0].innerText = "Invalid Username!"
         }
 
 
@@ -60,7 +60,7 @@ form.addEventListener('submit', (e) => {
     } else {
         response1 = false
         username.style.border = "2px solid red";
-        error[0].innerText = "Please enter your name"
+        error[0].innerText = "Please enter user name"
     }
 
 
@@ -76,7 +76,7 @@ form.addEventListener('submit', (e) => {
         } else {
             response2 = false
             password.style.border = "2px solid red";
-            error[1].innerText = "wrong password"
+            error[1].innerText = "Invalid password!"
         }
 
 
@@ -84,7 +84,7 @@ form.addEventListener('submit', (e) => {
     } else {
         response2 = false
         password.style.border = "2px solid red";
-        error[1].innerText = "Please enter Your password"
+        error[1].innerText = "Please enter  password"
     }
 
 

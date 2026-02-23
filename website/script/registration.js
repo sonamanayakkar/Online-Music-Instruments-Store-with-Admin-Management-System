@@ -90,7 +90,7 @@ form.addEventListener('submit', (e) => {
         else {
             filled1 = false
             fname.style.border = "2px red solid"
-            error[0].innerText = "Please Enter your name"
+            error[0].innerText = "Name should contain atleast 4 characters"
             console.log("wrong Url");
         }
 

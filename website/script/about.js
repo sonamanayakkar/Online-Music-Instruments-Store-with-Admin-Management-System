@@ -62,7 +62,7 @@ let cartcount = () => {
 
 document.addEventListener('scroll', (e) => {
     let header = document.querySelector("header")
-    console.log(window.scrollY);
+    
 
     let scroll = window.scrollY
 

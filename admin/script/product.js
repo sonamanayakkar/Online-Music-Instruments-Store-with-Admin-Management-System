@@ -16,15 +16,15 @@ let error = document.querySelectorAll(".error")
 let form = document.querySelector("#form")
 
 
-offer.addEventListener('input',()=>{
-  let percentage = ((offer.value/100)*orinalprz.value)
-  let finalprice = orinalprz.value-percentage
-  discountprz.value=finalprice
+offer.addEventListener('input', () => {
+    let percentage = ((offer.value / 100) * orinalprz.value)
+    let finalprice = orinalprz.value - percentage
+    discountprz.value = finalprice
 })
 
 
 
-let inputlenthset = (inputname,length) => {
+let inputlenthset = (inputname, length) => {
     inputname.addEventListener('keydown', (e) => {
 
 
@@ -40,9 +40,9 @@ let inputlenthset = (inputname,length) => {
 
 }
 
-inputlenthset(offer,1)
-inputlenthset(orinalprz,9)
-inputlenthset(discountprz,9)
+inputlenthset(offer, 1)
+inputlenthset(orinalprz, 9)
+inputlenthset(discountprz, 9)
 
 
 
@@ -97,8 +97,8 @@ let getitems = (db) => {
 
 
 form.addEventListener('submit', (e) => {
-    
-    
+
+
 
     e.preventDefault()
 
@@ -129,10 +129,19 @@ form.addEventListener('submit', (e) => {
     }
     // product name verification
 
-    if ((productname.value) != "" && (productname.value).length > 3) {
-        filled2 = true
-        productname.style.border = ""
-        error[1].innerText = ""
+    if ((productname.value) != "") {
+
+        if ((productname.value).length > 3) {
+            filled2 = true
+            productname.style.border = ""
+            error[1].innerText = ""
+        }
+        else {
+            filled2 = false
+            productname.style.border = "2px red solid"
+            error[1].innerText = "product name must contain 4 charecters"
+        }
+
     }
 
     else {
@@ -148,13 +157,22 @@ form.addEventListener('submit', (e) => {
 
     if ((orinalprz.value) != "") {
 
+        if ((orinalprz.value) > 0) {
+            filled3 = true
 
-        filled3 = true
+            let roundop = Math.trunc(orinalprz.value);
 
-        let roundop = Math.trunc(orinalprz.value);
+            orinalprz.style.border = ""
+            error[2].innerText = ""
 
-        orinalprz.style.border = ""
-        error[2].innerText = ""
+        }
+        else {
+            filled3 = false
+
+            orinalprz.style.border = "2px red solid"
+            error[2].innerText = "negative price value not acceptable"
+        }
+
     }
 
     else {
@@ -170,7 +188,7 @@ form.addEventListener('submit', (e) => {
         let roundop = Math.trunc(orinalprz.value);
         filled4 = true
         discountprz.style.border = ""
-        error[3].innerText = ""
+        error[4].innerText = ""
     }
 
     else {
@@ -178,7 +196,7 @@ form.addEventListener('submit', (e) => {
         console.log("hi");
 
         discountprz.style.border = "2px red solid"
-        error[3].innerText = "Please Enter discount"
+        error[4].innerText = "Please Enter discount"
 
     }
 
@@ -186,11 +204,19 @@ form.addEventListener('submit', (e) => {
 
     if ((offer.value) != "") {
 
+        if ((offer.value) > 0) {
+            filled5 = true
+            offer.style.border = ""
+            error[3].innerText = ""
+        }
+        else {
+            filled5 = false
+
+            offer.style.border = "2px red solid"
+            error[3].innerText = "Please Enter Offer percentage in positive"
+        }
 
 
-        filled5 = true
-        offer.style.border = ""
-        error[4].innerText = ""
     }
 
     else {
@@ -198,8 +224,15 @@ form.addEventListener('submit', (e) => {
         console.log("hi");
 
         offer.style.border = "2px red solid"
-        error[4].innerText = "Please Enter Offer"
+        error[3].innerText = "Please Enter Offer"
 
+    }
+
+
+    if (category.value) {
+        
+    } else {
+        
     }
 
     if (filled1 && filled2 && filled3 && filled4 && filled5) {
@@ -215,7 +248,7 @@ form.addEventListener('submit', (e) => {
 
             // console.log(uploadeditcode());
             clearall()
-            
+
 
             upload()
 
@@ -241,7 +274,7 @@ form.addEventListener('submit', (e) => {
                 id: Date.now(),
                 url: url.value,
                 pname: productname.value,
-                category:category.value,
+                category: category.value,
                 originalprice: one,
                 discountprice: two,
                 offerpercentage: three
@@ -285,7 +318,7 @@ let upload = () => {
     let count = 0;
 
     for (let ele of getitems("products")) {
-     
+
         count++
         row += `
 
@@ -313,7 +346,7 @@ let upload = () => {
     
     `;
     }
-  
+
     tbody.innerHTML = row
 }
 
@@ -394,7 +427,7 @@ function edit(selecteditId) {
     })
 
     //then matchedid comes as ayyar format like [{}] so i need to unpack that
-   
+
 
     // unpacked array
     let [selected] = matchingid;
@@ -438,19 +471,19 @@ function uploadeditcode() {
         id: Number(product_id.value),
         url: url.value,
         pname: productname.value,
-        category:category.value,
+        category: category.value,
         originalprice: Number(orinalprz.value),
         discountprice: Number(discountprz.value),
         offerpercentage: Number(offer.value)
     }
 
     let getfromdbs = getitems("products")
-   
+
 
 
     let mapingid = getfromdbs.map((arr) => {
 
-      
+
 
         if (arr.id == details.id) {
             return details
@@ -461,7 +494,7 @@ function uploadeditcode() {
 
     })
 
- 
+
 
     // console.log(mapingid); // [{},{}]
 
@@ -485,10 +518,10 @@ function clearall() {
 
 document.addEventListener('DOMContentLoaded', (e) => {
     upload()
-    
+
 
     let datafromlocalstorage = getitems("products")
-  
+
 
     datafromlocalstorage.forEach(element => {
         productlist.push(element)

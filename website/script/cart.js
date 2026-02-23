@@ -211,7 +211,7 @@ let buyingprocess = () => {
     let buy_button = document.getElementById("buy_now")
     let totalamount = document.getElementById("total_amount")
 
-    let datafrom_db = getitems("cart_items");
+    let datafrom_db = getitems("cart_items") ||[];
 
     datafrom_db.forEach(element => {
         element.price
@@ -291,7 +291,7 @@ function sendmail() {
 
     let totalprice = 0;
    
-    let datafrom_db = getitems("cart_items");
+    let datafrom_db = getitems("cart_items") ||[];
 
     let productsarray = new Array()
 
@@ -460,7 +460,7 @@ let calculations = () => {
 let cartcount = () => {
     let totalcarts = document.getElementById("cartcount")
 
-    let valuefromdb = getitems("cart_items")
+    let valuefromdb = getitems("cart_items") ||[]
 
 
     // console.log(valuefromdb.length);
@@ -494,15 +494,8 @@ document.addEventListener('scroll', (e) => {
 })
 
 
-let fun=()=>{
-    let a=10
-    let b=20
-    return [a,b]
-}
 
-let sum =fun()
-console.log(sum);
-console.log(sum[0]);
+
 
 
 

@@ -13,7 +13,7 @@
     scroll-behavior: smooth;
 }
 
-body{
+body {
     overflow-x: hidden;
 }
 
@@ -31,8 +31,8 @@ body{
     top: -20px;
     right: -10px;
     color: rgb(0, 0, 0);
-    background-color: white;
-    font-weight: 800;
+    background-color: rgb(255, 255, 255);
+    font-weight: 600;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -56,8 +56,29 @@ body{
 
 .section1 header {
 
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.433);
 
+
+}
+
+header .fa-opencart {
+    color: white;
+    transition: .2s ease;
+
+}
+
+header .fa-opencart:hover {
+    transform: rotate(10deg);
+    text-shadow: 5px 0px 5px white;
+}
+
+header .fa-right-from-bracket{
+    transition: .2s ease;
+}
+
+header .fa-right-from-bracket:hover {
+    transform: scale(1.2);
+    color: red;
 }
 
 .section1 .top {
@@ -123,11 +144,11 @@ body{
 
 
 @keyframes letter {
-    from{
+    from {
         opacity: 0;
         transform: translateX(-100%);
     }
-} 
+}
 
 
 .section1 .banner2 {
@@ -138,11 +159,11 @@ body{
 
 
 @keyframes letter2 {
-    from{
+    from {
         opacity: 0;
         transform: translateX(100%);
     }
-} 
+}
 
 
 
@@ -193,62 +214,66 @@ body{
 
 /*-------------animation--------------*/
 
-.section2 .about{
-    animation: scroll  ease;
+.section2 .about {
+    animation: scroll ease;
     animation-timeline: view();
     animation-range: entry 20% cover 50vh;
 }
 
 @keyframes scroll {
-    from{
+    from {
         opacity: 0;
         transform: translateX(-100%);
     }
 }
-.section2 .year{
-    animation: scroll2  ease;
+
+.section2 .year {
+    animation: scroll2 ease;
     animation-timeline: view();
     animation-range: entry 20% cover 70vh;
 }
 
 @keyframes scroll2 {
-    from{
+    from {
         opacity: 0;
         transform: translateX(100%);
     }
 }
-.section2 .collection{
-    animation: scroll3  ease;
+
+.section2 .collection {
+    animation: scroll3 ease;
     animation-timeline: view();
     animation-range: entry 0% cover 70vh;
 }
 
 @keyframes scroll3 {
-    from{
+    from {
         opacity: 0;
         transform: translateY(100%);
     }
 }
-.section2 .letters{
-    animation: scroll4  ease;
+
+.section2 .letters {
+    animation: scroll4 ease;
     animation-timeline: view();
     animation-range: entry 0% cover 70vh;
 }
 
 @keyframes scroll4 {
-    from{
+    from {
         opacity: 0;
         transform: translateX(100%);
     }
 }
-.section2 .award{
-    animation: scroll5  ease;
+
+.section2 .award {
+    animation: scroll5 ease;
     animation-timeline: view();
     animation-range: entry 0% cover 40vh;
 }
 
 @keyframes scroll5 {
-    from{
+    from {
         opacity: 0;
         transform: translateX(-100%);
     }
@@ -342,14 +367,14 @@ body{
 /*-------------animation--------------*/
 
 
-.section3 .cartlists{
-     animation: scroll1  ease-in;
+.section3 .cartlists {
+    animation: scroll1 ease-in;
     animation-timeline: view();
     animation-range: entry 0% cover 40vh;
 }
 
 @keyframes scroll1 {
-    from{
+    from {
         opacity: 0;
         transform: scale(0);
     }

@@ -2,16 +2,47 @@ let logoutbutton = document.querySelector("#exist")
 
 logoutbutton.addEventListener('click', () => {
 
-    const conformation = confirm("Do you want logout ?")
 
-    if (conformation) {
 
-        setTimeout(() => {
-            window.location.href = "../index.html"
-        }, 1000);
+    Swal.fire({
+        title: "Are you sure?",
+        text: "Do you want to logout?",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, Logout"
+    }).then((result) => {
+        if (result.isConfirmed) {
+            let timerInterval;
+            Swal.fire({
+                title: "Logging out...",
+                html: "Please wait",
+                timer: 1000,
+                timerProgressBar: true,
+                didOpen: () => {
+                    Swal.showLoading();
+                    const timer = Swal.getPopup().querySelector("b");
+                    timerInterval = setInterval(() => {
+                        timer.textContent = `${Swal.getTimerLeft()}`;
+                    }, 100);
+                },
+                willClose: () => {
+                    clearInterval(timerInterval);
+                }
+            }).then((result) => {
+                if (result.dismiss === Swal.DismissReason.timer) {
+                    window.location.href = "../index.html"
+                }
+            });
 
-    }
+
+        }
+    });
+
+
 })
+
 
 let setitems = (settingarray, Keyname) => {
     let obj = JSON.stringify(settingarray)
@@ -211,7 +242,7 @@ let buyingprocess = () => {
     let buy_button = document.getElementById("buy_now")
     let totalamount = document.getElementById("total_amount")
 
-    let datafrom_db = getitems("cart_items") ||[];
+    let datafrom_db = getitems("cart_items") || [];
 
     datafrom_db.forEach(element => {
         element.price
@@ -290,8 +321,8 @@ let buyingprocess = () => {
 function sendmail() {
 
     let totalprice = 0;
-   
-    let datafrom_db = getitems("cart_items") ||[];
+
+    let datafrom_db = getitems("cart_items") || [];
 
     let productsarray = new Array()
 
@@ -401,7 +432,7 @@ let nodatafound = () => {
 
 let deleteitem = (productid) => {
 
-    let conformation = confirm("Do you want to remove this item from cart?")
+
 
     let valuefromdb = getitems("cart_items");
 
@@ -413,19 +444,31 @@ let deleteitem = (productid) => {
     })
 
 
+    Swal.fire({
+        title: "Are you sure?",
+        text: "Do you want remove this item from cart?",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#00a60b",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire({
+                title: "Deleted!",
+                text: "Your product has been deleted.",
+                icon: "success"
+            });
+
+            setitems(filteredarray, "cart_items")
+
+            upload()
+            total()
+            cartcount()
+        }
+    });
 
 
-
-    if (conformation) {
-
-        setitems(filteredarray, "cart_items")
-
-        upload()
-
-
-    }
-    total()
-    cartcount()
 
 }
 
@@ -460,7 +503,7 @@ let calculations = () => {
 let cartcount = () => {
     let totalcarts = document.getElementById("cartcount")
 
-    let valuefromdb = getitems("cart_items") ||[]
+    let valuefromdb = getitems("cart_items") || []
 
 
     // console.log(valuefromdb.length);

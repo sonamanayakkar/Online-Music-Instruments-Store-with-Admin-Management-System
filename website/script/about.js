@@ -1,16 +1,46 @@
 let logoutbutton = document.querySelector("#exist")
 
-logoutbutton.addEventListener('click',()=>{
+logoutbutton.addEventListener('click', () => {
 
-    const conformation = confirm("Do you want logout ?")
 
-    if (conformation) {
 
-        setTimeout(() => {
-            window.location.href="../index.html"
-        }, 1000);
-        
-    }
+    Swal.fire({
+        title: "Are you sure?",
+        text: "Do you want to logout?",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, Logout"
+    }).then((result) => {
+        if (result.isConfirmed) {
+            let timerInterval;
+            Swal.fire({
+                title: "Logging out...",
+                html: "Please wait",
+                timer: 1000,
+                timerProgressBar: true,
+                didOpen: () => {
+                    Swal.showLoading();
+                    const timer = Swal.getPopup().querySelector("b");
+                    timerInterval = setInterval(() => {
+                        timer.textContent = `${Swal.getTimerLeft()}`;
+                    }, 100);
+                },
+                willClose: () => {
+                    clearInterval(timerInterval);
+                }
+            }).then((result) => {
+                if (result.dismiss === Swal.DismissReason.timer) {
+                     window.location.href = "../index.html"
+                }
+            });
+
+       
+        }
+    });
+
+
 })
 
 

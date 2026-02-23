@@ -2,17 +2,47 @@
 
 let logoutbutton = document.querySelector("#exist")
 
-logoutbutton.addEventListener('click',()=>{
+logoutbutton.addEventListener('click', () => {
 
-    const conformation = confirm("Do you want logout ?")
 
-    if (conformation) {
 
-        setTimeout(() => {
-            window.location.href="../index.html"
-        }, 1000);
-        
-    }
+    Swal.fire({
+        title: "Are you sure?",
+        text: "Do you want to logout?",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, Logout"
+    }).then((result) => {
+        if (result.isConfirmed) {
+            let timerInterval;
+            Swal.fire({
+                title: "Logging out...",
+                html: "Please wait",
+                timer: 1000,
+                timerProgressBar: true,
+                didOpen: () => {
+                    Swal.showLoading();
+                    const timer = Swal.getPopup().querySelector("b");
+                    timerInterval = setInterval(() => {
+                        timer.textContent = `${Swal.getTimerLeft()}`;
+                    }, 100);
+                },
+                willClose: () => {
+                    clearInterval(timerInterval);
+                }
+            }).then((result) => {
+                if (result.dismiss === Swal.DismissReason.timer) {
+                    window.location.href = "../index.html"
+                }
+            });
+
+
+        }
+    });
+
+
 })
 
 
@@ -115,13 +145,13 @@ let upload = () => {
 
 
 document.addEventListener('click', (e) => {
-     
-   
-    let btn= e.target.closest(".addtocart");
-     if (!btn) return;
+
+
+    let btn = e.target.closest(".addtocart");
+    if (!btn) return;
     const id = btn.dataset.id;
 
-   
+
 
     if (btn) {
         let container = btn.closest(".col")
@@ -151,7 +181,30 @@ document.addEventListener('click', (e) => {
 
 
         if (checkalreadyexist) {
-            alert("This item is already in your cart.");
+            const toast = Toastify({
+                text: `
+                <div style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
+                        <span>Product already added to cart!</span>
+                       <i class="fa-solid fa-xmark" id="cancelBtn"></i>
+             
+                </div>
+                    `,
+                duration: 1500,
+                gravity: "top",
+                position: "right",
+                escapeMarkup: false,
+                style: {
+                    background: "linear-gradient(to right, #ff0000, #ff5050, #ff0000)",
+                    borderRadius: "10px",
+                    padding: "30px"
+                },
+                onClick: function () {
+                    toast.hideToast(); 
+                }
+            });
+
+            toast.showToast();
+
         }
 
         else {
@@ -164,7 +217,31 @@ document.addEventListener('click', (e) => {
             setitems(addcart_productlists, "cart_items");
             cartcount()
 
-            alert("Product added on cart ✅")
+            const toast = Toastify({
+                text: `
+                <div style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
+                        <span>Product added to cart</span>
+                       <i class="fa-solid fa-xmark" id="cancelBtn"></i>
+             
+                </div>
+                    `,
+                duration: 1500,
+                gravity: "top",
+                position: "right",
+                escapeMarkup: false,
+                style: {
+                    background: "linear-gradient(to right, #0caf01, #509c38, #0caf01)",
+                    borderRadius: "10px",
+                    padding: "30px"
+                },
+                onClick: function () {
+                    toast.hideToast();  
+                }
+            });
+
+            toast.showToast();
+
+
         }
 
 
@@ -183,7 +260,7 @@ document.addEventListener('click', (e) => {
 let cartcount = () => {
     let totalcarts = document.getElementById("cartcount")
 
-    let valuefromdb = getitems("cart_items")||[]
+    let valuefromdb = getitems("cart_items") || []
     console.log("this is");
 
     // console.log(valuefromdb.length);

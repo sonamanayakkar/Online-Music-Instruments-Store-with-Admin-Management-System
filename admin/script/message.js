@@ -1,3 +1,28 @@
+const bar = document.querySelector(".minimize")
+let menus = document.querySelectorAll(".locate")
+let image = document.querySelector(".image")
+let adminname = document.querySelector(".logo")
+let section = document.querySelector("section")
+let apps = document.querySelector(".apps")
+
+
+bar.addEventListener('click', (e) => {
+    section.classList.toggle("shrink")
+    adminname.classList.toggle("invisible")
+    apps.classList.toggle("verticle")
+
+    menus.forEach(element => {
+        element.classList.toggle("hide")
+    });
+
+})
+
+
+
+
+
+
+
 
 let getitems = (key) => {
     let item = localStorage.getItem(key)
@@ -12,7 +37,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
 
 let upload = () => {
-    let datafromdb = getitems("contact") ||[]
+    let datafromdb = getitems("contact") || []
     let tbody = document.querySelector('tbody')
     let count = 1;
     let row = ""

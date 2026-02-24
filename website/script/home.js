@@ -1,5 +1,14 @@
 
 
+let year = document.querySelector("#live_year");
+
+let date=new Date()
+
+year.innerText=date.getFullYear()
+
+
+
+
 let logoutbutton = document.querySelector("#exist")
 
 logoutbutton.addEventListener('click', () => {
@@ -194,7 +203,7 @@ document.addEventListener('click', (e) => {
                 position: "right",
                 escapeMarkup: false,
                 style: {
-                    background: "linear-gradient(to right, #ff0000, #ff5050, #ff0000)",
+                    background: "linear-gradient(to right, #ff913c, #af2929, #c00404)",
                     borderRadius: "10px",
                     padding: "30px"
                 },
@@ -230,7 +239,7 @@ document.addEventListener('click', (e) => {
                 position: "right",
                 escapeMarkup: false,
                 style: {
-                    background: "linear-gradient(to right, #0caf01, #509c38, #0caf01)",
+                    background: "linear-gradient(to right, #186ba7, #2d9d3c, #21671c)",
                     borderRadius: "10px",
                     padding: "30px"
                 },

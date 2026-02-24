@@ -9,6 +9,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Admin Pannel</title>
     <link rel="shortcut icon" href="../images/logo/3d-render-music-note-illustration-design.jpg" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.20/dist/sweetalert2.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style/style.css">
 </head>
 
@@ -17,8 +18,8 @@
 
     <section>
 
-
         <header class="box">
+            <i class="fa-solid fa-bars minimize"></i>
             <div class="h input">
                 <i class="fa-solid fa-list"></i>
                 <input type="text" placeholder="Search here">
@@ -27,13 +28,19 @@
 
 
             <div class="h profile">
+                <div class="box">
+                    <h3><span id="hours">00</span>:<span id="minitus">00</span>:<span id="seconds">00</span><span
+                            id="am"></span></h3>
+
+
+                </div>
                 <div class="nation"></div>
-                <i class="fa-brands fa-opencart"></i>
+
                 <i class="fa-solid fa-bell"></i>
                 <div class="p">
                     <img src="../admin/images/WhatsApp Image 2025-06-12 at 11.14.02_1b612ea7.jpg" alt="">
                 </div>
-                <i class="fa-solid fa-angle-down"></i>
+
             </div>
 
 
@@ -42,7 +49,11 @@
 
         <aside class="box">
             <div class="logo">
-                <h2>Rhythmix</h2>
+                <div class="image">
+                    <img src="images/user-sign-icon-front-side.jpg" alt="">
+
+                </div>
+                <h1 id="adminname">Admin</h1>
 
                 <i class="fa-solid fa-xmark"></i>
             </div>
@@ -52,26 +63,33 @@
                     <li>
                         <a href="dashboard.html">
                             <i class="fa-solid fa-house"></i>
-                            <span>Dashboard</span>
+                            <span class="locate">Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="category.html">
+                            <i class="fa-solid fa-list-ul"></i>
+                            <span class="locate">Category</span>
                         </a>
                     </li>
                     <li>
                         <a href="customer.html">
-                            <i class="fa-solid fa-user"></i>
-                            <span>Customers</span>
+                            <i class="fa-solid fa-users"></i>
+                            <span class="locate">Customers</span>
                         </a>
                     </li>
 
                     <li>
                         <a href="products.html">
-                            <i class="fa-brands fa-product-hunt"></i>
-                            <span>products</span>
+                            <i class="fa-brands fa-opencart"></i>
+                            <span class="locate">products</span>
                         </a>
                     </li>
 
                     <li>
-                        <a href="message.html"><i class="fa-regular fa-comment"></i>
-                            <span>message</span>
+                        <a href="message.html">
+                            <i class="fa-solid fa-comments"></i>
+                            <span class="locate">message</span>
                         </a>
                     </li>
 
@@ -79,13 +97,20 @@
                     <li id="logout">
                         <a href="">
                             <i class="fa-solid fa-arrow-right-to-bracket"></i>
-                            <span>Logout</span>
+                            <span class="locate">Logout</span>
                         </a>
                     </li>
 
                 </ul>
 
             </section>
+
+            <div class="apps">
+                <div class="box"><i class="fa-brands fa-instagram"></i></div>
+                <div class="box"><i class="fa-brands fa-facebook-f"></i></div>
+                <div class="box"><i class="fa-brands fa-x-twitter"></i></div>
+                <div class="box"><i class="fa-brands fa-linkedin-in"></i></div>
+            </div>
 
         </aside>
 
@@ -121,11 +146,7 @@
                     <select name="" id="select">
 
                         <option value="">--Please choose an option--</option>
-                        <option value="Acoustic">Acoustic </option>
-                        <option value="Amplifier">Amplifier </option>
-                        <option value="Effect">Effect </option>
-                        <option value="Guitars">Guitars </option>
-                        <option value="Hardcase">Hardcase </option>
+
 
                     </select>
 
@@ -253,6 +274,7 @@
     <script type="" src="script/product.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="script/time.js"></script>
 
 </body>
 

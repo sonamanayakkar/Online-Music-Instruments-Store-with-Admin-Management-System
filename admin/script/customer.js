@@ -1,4 +1,27 @@
 
+const bar = document.querySelector(".minimize")
+let menus = document.querySelectorAll(".locate")
+let image = document.querySelector(".image")
+let adminname = document.querySelector(".logo")
+let section = document.querySelector("section")
+let apps = document.querySelector(".apps")
+
+
+bar.addEventListener('click', (e) => {
+    section.classList.toggle("shrink")
+    adminname.classList.toggle("invisible")
+    apps.classList.toggle("verticle")
+
+    menus.forEach(element => {
+        element.classList.toggle("hide")
+    });
+
+})
+
+
+
+
+
 let body = document.querySelector("tbody")
 
 let getitems = (db) => {
@@ -17,7 +40,7 @@ console.log(users);
 
 if (users != null) {
     users.forEach((ele, index, Array) => {
-      let  tr = document.createElement("tr")
+        let tr = document.createElement("tr")
 
         let sno = index + 1
         tr.innerHTML = `
@@ -32,7 +55,7 @@ if (users != null) {
 
 
 else {
-    let  tr = document.createElement("tr")
+    let tr = document.createElement("tr")
     tr.innerHTML = `
                 <td></td>
                 <td>Users not Found!</td>

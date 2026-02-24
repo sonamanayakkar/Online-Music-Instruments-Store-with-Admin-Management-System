@@ -1,3 +1,11 @@
+let year = document.querySelector("#live_year");
+
+let date = new Date()
+
+year.innerText = date.getFullYear()
+
+
+
 let logoutbutton = document.querySelector("#exist")
 
 logoutbutton.addEventListener('click', () => {
@@ -32,11 +40,11 @@ logoutbutton.addEventListener('click', () => {
                 }
             }).then((result) => {
                 if (result.dismiss === Swal.DismissReason.timer) {
-                     window.location.href = "../index.html"
+                    window.location.href = "../index.html"
                 }
             });
 
-       
+
         }
     });
 
@@ -228,7 +236,7 @@ form.addEventListener('submit', (e) => {
 
 
     if (conformation1 && conformation2 && conformation3 && conformation4) {
-    
+
         let users = {
             username: username.value,
             email: email.value,

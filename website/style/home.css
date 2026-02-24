@@ -530,6 +530,24 @@ footer .lin1 {
     font-size: 1rem;
 }
 
+footer .app{
+   transition: .3s ease;
+   
+}
+footer .app:hover{
+    
+    transform:  translateY(-10px);
+   
+}
+
+footer .app:hover i{
+    transform: scale(1.3);
+     color: var(--orange-color);
+}
+footer .app i{
+    transition: .3s ease;
+     color: white;
+}
 
 
 @media screen and (max-width:800px) {

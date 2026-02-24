@@ -12,34 +12,64 @@ let logout = document.querySelector('#logout');
 
 
 
-logout.addEventListener('click',(e)=>{
-      e.preventDefault()
-      
-      let conformation = confirm("Do you want to logout ?")
+logout.addEventListener('click', (e) => {
+   e.preventDefault()
 
-      if (conformation) {
+   Swal.fire({
+      title: "Are you sure?",
+      text: "Dou want to logout?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+   }).then((result) => {
+      if (result.isConfirmed) {
+         Swal.fire({
+            title: "Deleted!",
+            text: "Your file has been deleted.",
+            icon: "success"
+         });
 
-         setTimeout(() => {
-             window.location.href="../index.html"
-         }, 1000);
-        
+         let timerInterval;
+         Swal.fire({
+            title: "Logging out...",
+            html: "please wait",
+            timer: 2000,
+            timerProgressBar: true,
+            didOpen: () => {
+               Swal.showLoading();
+               const timer = Swal.getPopup().querySelector("b");
+               timerInterval = setInterval(() => {
+                  timer.textContent = `${Swal.getTimerLeft()}`;
+               }, 100);
+            },
+            willClose: () => {
+               clearInterval(timerInterval);
+            }
+         }).then((result) => {
+            if (result.dismiss === Swal.DismissReason.timer) {
+               window.location.href = "../index.html"
+            }
+         });
       }
+   });
 
 
-      
+
 })
 
 
-menu.addEventListener('click',()=>{
-   
+menu.addEventListener('click', () => {
+
    aside.classList.add('aside1');
 })
-crossmark.addEventListener('click',()=>{
+crossmark.addEventListener('click', () => {
    aside.classList.remove('aside1');
 })
 
-search.addEventListener('click',()=>{
+search.addEventListener('click', () => {
    input.classList.toggle('se-m1');
-  
-  
+
+
 })

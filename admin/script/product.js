@@ -1,3 +1,27 @@
+const bar = document.querySelector(".minimize")
+let menus = document.querySelectorAll(".locate")
+let image = document.querySelector(".image")
+let adminname = document.querySelector(".logo")
+let section = document.querySelector("section")
+let apps = document.querySelector(".apps")
+
+
+bar.addEventListener('click', (e) => {
+    section.classList.toggle("shrink")
+    adminname.classList.toggle("invisible")
+    apps.classList.toggle("verticle")
+
+    menus.forEach(element => {
+        element.classList.toggle("hide")
+    });
+
+})
+
+
+
+
+
+
 
 
 
@@ -230,9 +254,9 @@ form.addEventListener('submit', (e) => {
 
 
     if (category.value) {
-        
+
     } else {
-        
+
     }
 
     if (filled1 && filled2 && filled3 && filled4 && filled5) {
@@ -354,10 +378,10 @@ let upload = () => {
 function remove(selectedtrash) {
 
 
-    let conformation = confirm("Do you want to delete selected product ?")
+
+   
     let deletelists = getitems("products");
 
-    console.log(deletelists);
 
     let elementruturn = deletelists.filter((ele) => {
 
@@ -367,32 +391,47 @@ function remove(selectedtrash) {
         }
     })
 
-    if (conformation) {
-        setitems(elementruturn)
-        alert("product removed✅")
 
-        getitems("products")
-
-        if ((getitems("products")).length < 1) {
-            setitems()
-            productlist = [];
-            nodata_found()
-        }
-        else {
-            upload()
-            let localstoragevalues = getitems("products")
-
-            productlist = [];
-
-            localstoragevalues.forEach(element => {
-                productlist.push(element)
+    Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success"
             });
+
+            setitems(elementruturn)
+            getitems("products")
+
+            if ((getitems("products")).length < 1) {
+                setitems()
+                productlist = [];
+                nodata_found()
+            }
+            else {
+                upload()
+                let localstoragevalues = getitems("products")
+
+                productlist = [];
+
+                localstoragevalues.forEach(element => {
+                    productlist.push(element)
+                });
+            }
+
+            console.log(productlist);
         }
+    });
 
-        console.log(productlist);
-
-    }
-
+    
 
 
 }
@@ -519,6 +558,8 @@ function clearall() {
 document.addEventListener('DOMContentLoaded', (e) => {
     upload()
 
+    dropdown()
+
 
     let datafromlocalstorage = getitems("products")
 
@@ -530,6 +571,28 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
     console.log(productlist);
 })
+
+
+
+
+let dropdown = () => {
+    let datafromDb = getitems("category")
+
+
+    let select = document.querySelector("select")
+    let val;
+    datafromDb.forEach(element => {
+        val += `
+                    <option value="${element.categoryname} ">${element.categoryname} </option>
+                `
+
+        select.innerHTML = val
+    });
+
+
+
+
+}
 
 
 

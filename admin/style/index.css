@@ -33,13 +33,33 @@ main .Dashcontainer .two {
 }
 
 main .Dashcontainer .two .box {
-    background-color: #01112f;
+    background: linear-gradient(to right, #1c3a72, #021c4c, #010d23);
+    /* background-color: #01112f; */
     border: 2px solid rgb(19, 37, 80);
     border-radius: 5px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: .4s ease;
 
+}
+
+main .Dashcontainer .two .box:hover{
+    box-shadow: 0px 0px 5px 1px #1c3a72;
+    background: linear-gradient(to right,  #010d23, #021c4c,#1c3a72);
+    transform: translateY(-5px);
+    
+}
+main .Dashcontainer .two .box i{
+   transition: .2s ease;
+   
+    
+}
+main .Dashcontainer .two .box:hover i{
+    text-shadow: 0px 10px 5px  rgb(0, 0, 0);
+    transform: scale(1.1);
+   
+    
 }
 
 main .Dashcontainer .two .box .details {

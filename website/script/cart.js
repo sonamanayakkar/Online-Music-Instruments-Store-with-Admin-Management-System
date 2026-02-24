@@ -1,3 +1,10 @@
+let year = document.querySelector("#live_year");
+
+let date=new Date()
+
+year.innerText=date.getFullYear()
+
+
 let logoutbutton = document.querySelector("#exist")
 
 logoutbutton.addEventListener('click', () => {

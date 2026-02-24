@@ -33,11 +33,14 @@ section {
     height: 100vh;
     display: grid;
     grid-template-columns: 280px auto;
-    /* grid-template-rows: 10% auto 10%; */
     grid-template-rows: 10% auto;
-
-    /* grid-template-areas: 'aside header ' 'aside main' 'aside footer'; */
     grid-template-areas: 'aside header ' 'aside main';
+    transition: .4s ease;
+}
+
+.shrink {
+    grid-template-columns: 90px auto;
+    transition: .4s ease;
 }
 
 
@@ -53,6 +56,12 @@ header {
     /* background: linear-gradient(rgba(0, 0, 0, 0.784) ,rgba(45, 26, 154, 0.297)); */
     background-color: #0a1128;
 
+}
+
+header .fa-bars {
+    color: white;
+    font-size: 1.3rem;
+    cursor: pointer;
 }
 
 header .input {
@@ -98,6 +107,15 @@ header .profile .p img {
     object-fit: cover;
 }
 
+
+header .profile h3 {
+    color: rgb(255, 255, 255);
+}
+
+header .profile h3 span {
+    margin: 0 3px;
+}
+
 header .profile .nation {
 
     height: 40px;
@@ -140,6 +158,7 @@ section aside {
     grid-area: aside;
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     background-color: #0a1128;
     align-items: center;
 
@@ -150,18 +169,40 @@ section aside .logo {
 
     position: relative;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    font-size: 1.5rem;
+    gap: 20px;
+    font-size: 1.2rem;
     border-bottom: 2px solid rgb(15, 34, 80);
     color: rgb(184, 197, 253);
     font-weight: 700;
-    height: 10vh;
+    padding: 20px;
     width: 100%;
 }
 
-section aside .logo .fa-xmark {
+section aside .invisible {
+    display: none;
 
+}
+
+section aside .logo .image {
+
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+section aside .logo .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+section aside .logo .fa-xmark {
+    position: absolute;
+    top: 20px;
+    right: 10px;
     font-size: 40px;
     display: none;
 }
@@ -172,7 +213,7 @@ section aside .menulist {
     align-items: center;
     justify-content: center;
     /* border: green solid; */
-
+    padding: 20px;
     width: 100%;
     height: fit-content;
 }
@@ -183,8 +224,7 @@ section aside .menulist ul {
     flex-direction: column;
     gap: 20px;
     width: 100%;
-    height: 83vh;
-    /* border: rgb(255, 1, 1) solid; */
+
 }
 
 section aside .menulist ul::-webkit-scrollbar {
@@ -214,12 +254,40 @@ section aside .menulist ul li:hover {
     background-color: #152a4f;
 }
 
+section aside .apps {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+section aside .verticle{
+     display: flex;
+     align-items: center;
+     gap: 10px;
+     flex-direction: column;
+}
+
+section aside .apps .box {
+    color: white;
+    font-size: 1.5rem;
+
+}
+
 
 section aside .menulist ul li a {
     text-transform: capitalize;
     text-decoration: none;
     color: #ffffff;
-    font-size: 1.2rem;
+    font-size: 1rem;
+}
+
+section aside .menulist ul li a .hide {
+    display: none;
+    transition: .2s ease;
+}
+
+.menus {
+    display: none;
 }
 
 section aside .menulist ul li:hover a {
@@ -229,6 +297,7 @@ section aside .menulist ul li:hover a {
 
 section aside .menulist ul li a i {
     margin-right: 10px;
+    font-size: 1.3rem;
 }
 
 
@@ -251,10 +320,8 @@ main {
 
 
     background-color: #000814;
-
     position: relative;
     padding: 0 2vw;
-
     overflow: auto;
 
 }
@@ -264,7 +331,6 @@ main {
 main .hide {
     width: 100%;
     position: relative;
-
     display: flex;
     align-items: center;
     display: none;
@@ -289,7 +355,6 @@ main .forms form {
     /* background-color: var(--box-color); */
     display: flex;
     background-color: #01112f;
-
     backdrop-filter: blur(5px);
     flex-direction: column;
     gap: 20px;
@@ -492,6 +557,10 @@ footer {
         display: block;
     }
 
+    header .minimize{
+        display: none;
+    }
+
 
 
 
@@ -534,6 +603,8 @@ footer {
         z-index: 100;
 
     }
+
+    
 
     section .aside1 {
         grid-area: aside;
